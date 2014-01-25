@@ -44,12 +44,12 @@ TextureImporter:
     - name: weapon
       rect:
         serializedVersion: 2
-        x: 33
-        y: 123
-        width: 98
-        height: 188
+        x: 53
+        y: 172
+        width: 142
+        height: 247
       alignment: 9
-      pivot: {x: .640401185, y: .628078759}
+      pivot: {x: .296113193, y: .286198348}
     - name: head
       rect:
         serializedVersion: 2

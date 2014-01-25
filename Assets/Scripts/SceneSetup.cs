@@ -8,53 +8,58 @@ public class SceneSetup : MonoBehaviour {
 	GameObject[] players;
 	
 	// Use this for initialization
-	public void StartGame () {
+	void Start ()
+	{
 		PlayerSelection gameManager = FindObjectOfType(typeof(PlayerSelection)) as PlayerSelection;
+
 		int playerCount = gameManager.inputs.Count;
 		players = new GameObject[playerCount];
 		var quat = Quaternion.identity;
 		Debug.Log("spawning "+playerCount+" players");
-		for(int i = 0; i<playerCount; i++) {
-			var newX = (int)Random.Range(minBounds.x, maxBounds.x);
-			var newZ = (int)Random.Range(minBounds.z, maxBounds.z);
-			var position = new Vector3(newX, 0, newZ);
+		for(int i = 0; i<playerCount; i++)
+		{
+			// TODO: random position
+			var position = new Vector3(0,0,0);
 			
-			players[i]= (GameObject) Instantiate(Resources.Load<GameObject>("Player_0"+(i+1)),position,quat);
+			players[i] = (GameObject) Instantiate(Resources.Load<GameObject>("Player"),position,quat);
 			players[i].GetComponent<PlayerMover>().wrapper = gameManager.inputs[i];
-			players[i].GetComponent<DummyController>().enabled = false;
+
+			var skin = (GameObject) Instantiate(Resources.Load<GameObject>("Skins/Skin_0"+(i+1)));
+			skin.transform.parent = players[i].transform;
+			skin.transform.localPosition = Vector3.zero;
+
 			// TODO: ui binding
 		}
 		for(uint i = 0; i < numNPCs; i++) {
-			GameObject npc = null;
 			var newX = (int)Random.Range(minBounds.x, maxBounds.x);
 			var newZ = (int)Random.Range(minBounds.z, maxBounds.z);
 			var position = new Vector3(newX, 0, newZ);
-		
+
+			GameObject npc = (GameObject)Instantiate(Resources.Load<GameObject>("NPC"));
+			var skinName = "Skins/Skin_01";
+
 			switch(i % playerCount) {
-				case 0:
-					npc = (GameObject)Instantiate(Resources.Load<GameObject>("Character_01"),position,quat);
-					break;
 				case 1:
-					npc = (GameObject)Instantiate(Resources.Load<GameObject>("Character_02"),position,quat);
+					skinName = "Skins/Skin_02";
 					break;
 				case 2:
-					npc = (GameObject)Instantiate(Resources.Load<GameObject>("Character_03"),position,quat);
+					skinName = "Skins/Skin_03";
 					break;
 				case 3:
-					npc = (GameObject)Instantiate(Resources.Load<GameObject>("Character_04"),position,quat);
+					skinName = "Skins/Skin_04";
 					break;
 			}
 			
-			
-			
+			GameObject skin = (GameObject)Instantiate(Resources.Load<GameObject>(skinName));
+			skin.transform.parent = npc.transform;
+
 			AIController npcController = npc.GetComponent<AIController>();
 			npcController.MinBounds = minBounds;
 			npcController.MaxBounds = maxBounds;
-
 		}
 		
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		

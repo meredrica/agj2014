@@ -131,18 +131,14 @@ public class PlayerMover : MonoBehaviour {
 			Vector3 result = new Vector3(wrapper.getXMod() * speed * delta,0 , wrapper.getZMod() * speed * delta) + transform.position;
 			
 			if(result.x < MinBounds.x) {
-				Debug.Log("x < minX");
 				result.x = MinBounds.x;
 			} else if(result.x > MaxBounds.x) {
-				Debug.Log("x > maxX");
 				result.x = MaxBounds.x;
 			}
 			
 			if(result.z < MinBounds.z) {
-				Debug.Log("z < minZ");
 				result.z = MinBounds.z;
 			} else if(result.z > MaxBounds.z) {
-				Debug.Log("z > maxZ");
 				result.z = MaxBounds.z;
 			}
 			

@@ -75,10 +75,9 @@ public class GamepadControls : InputWrapper {
 	
 	public bool murder() {
 		var state = GamePad.GetState(index);
-		return true;
-		/*
-		return state.Buttons.X;
-	*/}
+		
+		return state.Buttons.X.Equals(ButtonState.Pressed);
+	}
 }
 
 public class KeyboardLeftControls : InputWrapper {

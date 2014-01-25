@@ -48,22 +48,23 @@ public class PlayerSelection : MonoBehaviour {
 				unassigned.Remove(index);
 				players++;
 				Debug.Log("assigned player " + players);
-				break;
+				return;
 			}
-			if (Input.GetKeyDown (KeyCode.LeftControl) && keyleftassigned == false) {
-				inputs.Add(new KeyboardLeftControls());
-				keyleftassigned = true;
-				players++;
-				Debug.Log("assigned player " + players);
-				break;
-			}
-			if (Input.GetKeyDown(KeyCode.RightControl) && keyrightassigned == false) {
-				inputs.Add(new KeyboardRightControls());
-				keyrightassigned = true;
-				players++;
-				Debug.Log("assigned player " + players);
-				break;
-			}
+			
+		}
+		if (Input.GetKeyDown (KeyCode.LeftControl) && keyleftassigned == false) {
+			inputs.Add(new KeyboardLeftControls());
+			keyleftassigned = true;
+			players++;
+			Debug.Log("assigned player " + players);
+			return;
+		}
+		if (Input.GetKeyDown(KeyCode.RightControl) && keyrightassigned == false) {
+			inputs.Add(new KeyboardRightControls());
+			keyrightassigned = true;
+			players++;
+			Debug.Log("assigned player " + players);
+			return;
 		}
 	}
 	private void startGame() {

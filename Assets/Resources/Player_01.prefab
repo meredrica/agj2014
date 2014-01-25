@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8191892eb97f4294fb5e14d0b8d403a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678f1b7363fc4fb419f8e3afbe0dc89a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2
+  radius: 3
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 911c63585a07d0943bf1abe4414cc76f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  respawnTime: 4
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -41,3 +41,15 @@ TagManager:
     userID: 0
     uniqueID: 0
     locked: 0
+  - name: Body
+    userID: 1
+    uniqueID: 2960230725
+    locked: 0
+  - name: Head
+    userID: 2
+    uniqueID: 4229709265
+    locked: 0
+  - name: Weapon
+    userID: 3
+    uniqueID: 1733941231
+    locked: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d10dbdb360459e2479ecf30ce57e3a29
+guid: fcd64c256f644944fbc52ba8cc17a3dd
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -44,28 +44,28 @@ TextureImporter:
     - name: weapon
       rect:
         serializedVersion: 2
-        x: 33
+        x: 6
         y: 123
-        width: 98
+        width: 125
         height: 188
       alignment: 9
-      pivot: {x: .640401185, y: .628078759}
+      pivot: {x: .713218868, y: .628078878}
     - name: head
       rect:
         serializedVersion: 2
-        x: 257
-        y: 268
-        width: 173
-        height: 215
+        x: 219
+        y: 267
+        width: 236
+        height: 184
       alignment: 9
-      pivot: {x: .419835329, y: .403463721}
+      pivot: {x: .458404154, y: .465299696}
     - name: body
       rect:
         serializedVersion: 2
-        x: 217
+        x: 190
         y: 9
-        width: 260
-        height: 200
+        width: 306
+        height: 202
       alignment: 7
       pivot: {x: .5, y: 0}
   spritePackingTag: character

@@ -122,7 +122,6 @@ MonoBehaviour:
   CharController: {fileID: 20856700}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &20856700
 MonoBehaviour:
@@ -136,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad618ed59e98bce489510a143b51a810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetPosition: {x: 0, y: 0, z: 0}
+  TargetPosition: {x: -13, y: 0, z: 1}
   UpdatePositionOffset: 0
   Speed: 8
 --- !u!4 &20856701
@@ -162,11 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e73cc36b020fc8045bc65881bf469e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
-  controllerPlayer: 0
-  keyboardPlayer: -1
-  MinBounds: {x: -15, y: 0, z: -10}
-  MaxBounds: {x: 15, y: 0, z: 10}
 --- !u!1 &22387047
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,7 +220,6 @@ MonoBehaviour:
   CharController: {fileID: 22387051}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &22387051
 MonoBehaviour:
@@ -390,7 +383,6 @@ MonoBehaviour:
   CharController: {fileID: 41153084}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &41153084
 MonoBehaviour:
@@ -466,7 +458,6 @@ MonoBehaviour:
   CharController: {fileID: 46786215}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &46786215
 MonoBehaviour:
@@ -678,7 +669,6 @@ MonoBehaviour:
   CharController: {fileID: 77998820}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &77998820
 MonoBehaviour:
@@ -742,7 +732,6 @@ MonoBehaviour:
   CharController: {fileID: 107182355}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &107182355
 MonoBehaviour:
@@ -1207,7 +1196,6 @@ MonoBehaviour:
   CharController: {fileID: 191218544}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &191218544
 MonoBehaviour:
@@ -1221,7 +1209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad618ed59e98bce489510a143b51a810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetPosition: {x: 0, y: 0, z: 0}
+  TargetPosition: {x: -13, y: 0, z: 1}
   UpdatePositionOffset: 0
   Speed: 8
 --- !u!1001 &193723219
@@ -1551,7 +1539,6 @@ MonoBehaviour:
   CharController: {fileID: 344563524}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &344563524
 MonoBehaviour:
@@ -1565,7 +1552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad618ed59e98bce489510a143b51a810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetPosition: {x: 0, y: 0, z: 0}
+  TargetPosition: {x: -13, y: 0, z: 1}
   UpdatePositionOffset: 0
   Speed: 8
 --- !u!4 &344563525
@@ -1691,7 +1678,6 @@ MonoBehaviour:
   CharController: {fileID: 375484564}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &375484564
 MonoBehaviour:
@@ -1705,7 +1691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad618ed59e98bce489510a143b51a810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetPosition: {x: 0, y: 0, z: 0}
+  TargetPosition: {x: -13, y: 0, z: 1}
   UpdatePositionOffset: 0
   Speed: 8
 --- !u!1 &377233044
@@ -1767,7 +1753,6 @@ MonoBehaviour:
   CharController: {fileID: 377233048}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &377233048
 MonoBehaviour:
@@ -1983,7 +1968,6 @@ MonoBehaviour:
   CharController: {fileID: 500321680}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &500321680
 MonoBehaviour:
@@ -1997,7 +1981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad618ed59e98bce489510a143b51a810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetPosition: {x: 0, y: 0, z: 0}
+  TargetPosition: {x: -13, y: 0, z: 1}
   UpdatePositionOffset: 0
   Speed: 8
 --- !u!4 &500321681
@@ -2071,7 +2055,6 @@ MonoBehaviour:
   CharController: {fileID: 524373220}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &524373220
 MonoBehaviour:
@@ -2085,7 +2068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad618ed59e98bce489510a143b51a810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetPosition: {x: 0, y: 0, z: 0}
+  TargetPosition: {x: -13, y: 0, z: 1}
   UpdatePositionOffset: 0
   Speed: 8
 --- !u!1001 &527949181
@@ -2319,7 +2302,6 @@ MonoBehaviour:
   CharController: {fileID: 557171354}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &557171354
 MonoBehaviour:
@@ -2519,7 +2501,6 @@ MonoBehaviour:
   CharController: {fileID: 566897405}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &566897405
 MonoBehaviour:
@@ -2914,7 +2895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad618ed59e98bce489510a143b51a810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetPosition: {x: 0, y: 0, z: 0}
+  TargetPosition: {x: -13, y: 0, z: 1}
   UpdatePositionOffset: 0
   Speed: 8
 --- !u!114 &627575409
@@ -2932,7 +2913,6 @@ MonoBehaviour:
   CharController: {fileID: 627575408}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &627575410
 MonoBehaviour:
@@ -3415,7 +3395,6 @@ MonoBehaviour:
   CharController: {fileID: 755963009}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &755963009
 MonoBehaviour:
@@ -3491,7 +3470,6 @@ MonoBehaviour:
   CharController: {fileID: 768930271}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &768930271
 MonoBehaviour:
@@ -3567,7 +3545,6 @@ MonoBehaviour:
   CharController: {fileID: 771246407}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &771246407
 MonoBehaviour:
@@ -3767,7 +3744,6 @@ MonoBehaviour:
   CharController: {fileID: 811859820}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &811859820
 MonoBehaviour:
@@ -3831,7 +3807,6 @@ MonoBehaviour:
   CharController: {fileID: 818581366}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &818581366
 MonoBehaviour:
@@ -3991,7 +3966,6 @@ MonoBehaviour:
   CharController: {fileID: 861137591}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &861137591
 MonoBehaviour:
@@ -4005,7 +3979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad618ed59e98bce489510a143b51a810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetPosition: {x: 0, y: 0, z: 0}
+  TargetPosition: {x: -13, y: 0, z: 1}
   UpdatePositionOffset: 0
   Speed: 8
 --- !u!1 &861577966
@@ -4067,7 +4041,6 @@ MonoBehaviour:
   CharController: {fileID: 861577970}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &861577970
 MonoBehaviour:
@@ -4315,7 +4288,6 @@ MonoBehaviour:
   CharController: {fileID: 899211468}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &899211468
 MonoBehaviour:
@@ -4329,7 +4301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad618ed59e98bce489510a143b51a810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetPosition: {x: 0, y: 0, z: 0}
+  TargetPosition: {x: -13, y: 0, z: 1}
   UpdatePositionOffset: 0
   Speed: 8
 --- !u!1 &938617165
@@ -4771,7 +4743,6 @@ MonoBehaviour:
   CharController: {fileID: 978592785}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &978592785
 MonoBehaviour:
@@ -5179,7 +5150,6 @@ MonoBehaviour:
   CharController: {fileID: 1057946831}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &1057946831
 MonoBehaviour:
@@ -5459,7 +5429,6 @@ MonoBehaviour:
   CharController: {fileID: 1114019233}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &1114019233
 MonoBehaviour:
@@ -5523,7 +5492,6 @@ MonoBehaviour:
   CharController: {fileID: 1115824729}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &1115824729
 MonoBehaviour:
@@ -5611,7 +5579,6 @@ MonoBehaviour:
   CharController: {fileID: 1130807381}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &1130807381
 MonoBehaviour:
@@ -5795,7 +5762,6 @@ MonoBehaviour:
   CharController: {fileID: 1144874591}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &1144874591
 MonoBehaviour:
@@ -5809,7 +5775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad618ed59e98bce489510a143b51a810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetPosition: {x: 0, y: 0, z: 0}
+  TargetPosition: {x: -13, y: 0, z: 1}
   UpdatePositionOffset: 0
   Speed: 8
 --- !u!4 &1144874592
@@ -6047,7 +6013,6 @@ MonoBehaviour:
   CharController: {fileID: 1219802368}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &1219802368
 MonoBehaviour:
@@ -6135,7 +6100,6 @@ MonoBehaviour:
   CharController: {fileID: 1228030481}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &1228030481
 MonoBehaviour:
@@ -6263,7 +6227,6 @@ MonoBehaviour:
   CharController: {fileID: 1274270242}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &1274270242
 MonoBehaviour:
@@ -6523,7 +6486,6 @@ MonoBehaviour:
   CharController: {fileID: 1304924270}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &1304924270
 MonoBehaviour:
@@ -6743,7 +6705,6 @@ MonoBehaviour:
   CharController: {fileID: 1326801114}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &1326801114
 MonoBehaviour:
@@ -6883,7 +6844,6 @@ MonoBehaviour:
   CharController: {fileID: 1334390517}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &1334390517
 MonoBehaviour:
@@ -7071,7 +7031,6 @@ MonoBehaviour:
   CharController: {fileID: 1402855428}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &1402855428
 MonoBehaviour:
@@ -7147,7 +7106,6 @@ MonoBehaviour:
   CharController: {fileID: 1404623197}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &1404623197
 MonoBehaviour:
@@ -7530,7 +7488,6 @@ MonoBehaviour:
   CharController: {fileID: 1493517897}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!1001 &1498534875
 Prefab:
@@ -7775,7 +7732,6 @@ MonoBehaviour:
   CharController: {fileID: 1537123130}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &1537123130
 MonoBehaviour:
@@ -7839,7 +7795,6 @@ MonoBehaviour:
   CharController: {fileID: 1552239567}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &1552239567
 MonoBehaviour:
@@ -7853,7 +7808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad618ed59e98bce489510a143b51a810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetPosition: {x: 0, y: 0, z: 0}
+  TargetPosition: {x: -13, y: 0, z: 1}
   UpdatePositionOffset: 0
   Speed: 8
 --- !u!4 &1552239568
@@ -8175,7 +8130,6 @@ MonoBehaviour:
   CharController: {fileID: 1591262201}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &1591262201
 MonoBehaviour:
@@ -8189,7 +8143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad618ed59e98bce489510a143b51a810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetPosition: {x: 0, y: 0, z: 0}
+  TargetPosition: {x: -13, y: 0, z: 1}
   UpdatePositionOffset: 0
   Speed: 8
 --- !u!1 &1607645866
@@ -8251,7 +8205,6 @@ MonoBehaviour:
   CharController: {fileID: 1607645870}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &1607645870
 MonoBehaviour:
@@ -8315,7 +8268,6 @@ MonoBehaviour:
   CharController: {fileID: 1614258635}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &1614258635
 MonoBehaviour:
@@ -8679,7 +8631,6 @@ MonoBehaviour:
   CharController: {fileID: 1653186820}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &1653186820
 MonoBehaviour:
@@ -8854,7 +8805,6 @@ MonoBehaviour:
   CharController: {fileID: 1699529992}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!1 &1702899497
 GameObject:
@@ -9219,7 +9169,6 @@ MonoBehaviour:
   CharController: {fileID: 1743982405}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &1743982405
 MonoBehaviour:
@@ -9427,7 +9376,6 @@ MonoBehaviour:
   CharController: {fileID: 1825512485}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &1825512485
 MonoBehaviour:
@@ -9683,7 +9631,6 @@ MonoBehaviour:
   CharController: {fileID: 1917891166}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &1917891166
 MonoBehaviour:
@@ -9697,7 +9644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad618ed59e98bce489510a143b51a810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetPosition: {x: 0, y: 0, z: 0}
+  TargetPosition: {x: -13, y: 0, z: 1}
   UpdatePositionOffset: 0
   Speed: 8
 --- !u!4 &1917891167
@@ -9883,7 +9830,6 @@ MonoBehaviour:
   CharController: {fileID: 1954836043}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &1954836043
 MonoBehaviour:
@@ -10215,7 +10161,6 @@ MonoBehaviour:
   CharController: {fileID: 1988325854}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &1988325854
 MonoBehaviour:
@@ -10395,7 +10340,6 @@ MonoBehaviour:
   CharController: {fileID: 2053824290}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &2053824290
 MonoBehaviour:
@@ -10459,7 +10403,6 @@ MonoBehaviour:
   CharController: {fileID: 2060472472}
   MinBounds: {x: -14.5, y: 0, z: -9.5}
   MaxBounds: {x: 14.5, y: 0, z: 9.5}
-  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &2060472472
 MonoBehaviour:

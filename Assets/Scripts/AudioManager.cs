@@ -4,7 +4,7 @@ using System.Collections;
 public class AudioManager : MonoBehaviour {
 	public AudioSource[] AudioSources;
 	public SceneSetup setup;
-	public float closeDistance = 6;
+	public float closeDistance = 7;
 
 	bool mPlayMusic;
 	int mClosePlayers;

@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e323fdb0135eb641bd35b5c41c4549e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numNPCs: 0
+  numNPCs: 30
   minBounds: {x: 0, y: 0, z: 0}
   maxBounds: {x: 0, y: 0, z: 0}
   players: []

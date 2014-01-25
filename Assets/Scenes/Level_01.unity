@@ -380,7 +380,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: .87843138, g: .847058833, b: .831372559, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -519,6 +519,26 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 20a738a012eeb2242802306edbc31254, type: 2}
+      propertyPath: ScaleX
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 20a738a012eeb2242802306edbc31254, type: 2}
+      propertyPath: ScaleY
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 20a738a012eeb2242802306edbc31254, type: 2}
+      propertyPath: Refresh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 20a738a012eeb2242802306edbc31254, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 20a738a012eeb2242802306edbc31254, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20a738a012eeb2242802306edbc31254, type: 2}
   m_RootGameObject: {fileID: 2041148269}
@@ -594,7 +614,7 @@ Transform:
   m_GameObject: {fileID: 1736676409}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: 0, y: .00100000005, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 12, y: 12, z: 1}
   m_Children: []
   m_Father: {fileID: 2041148270}
 --- !u!1 &1774154820
@@ -639,8 +659,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01bdefe05b438e4c94d07df9b80d656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScaleX: 30
-  ScaleY: 20
+  ScaleX: 7.5
+  ScaleY: 10
   Refresh: 0
 --- !u!23 &1774154823
 Renderer:

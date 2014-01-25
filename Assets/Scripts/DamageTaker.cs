@@ -60,6 +60,7 @@ public abstract class DamageTaker : MonoBehaviour {
 					alive = true;
 				}
 				timer = 0;
+				GetComponent<SpawnEffect>().startEffect();
 			}
 		}
 	}

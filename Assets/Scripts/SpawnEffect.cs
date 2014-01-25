@@ -14,9 +14,6 @@ public class SpawnEffect : MonoBehaviour {
 		StartCoroutine("Fade");
 	}
 	
-	void update() {
-	}
-	
 	IEnumerator Fade() {
 		for(float f = 0; f < mSpawnTime; f += Time.deltaTime) {
 			transform.localScale = new Vector3(f/mSpawnTime, f/mSpawnTime, f/mSpawnTime);

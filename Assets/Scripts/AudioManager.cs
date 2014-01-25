@@ -52,6 +52,10 @@ public class AudioManager : MonoBehaviour {
 			for (int j=i+1; j< players.Length; j++) {
 				var other = players[j];
 				var currentPosition = current.transform.position;
+				var dt = other.GetComponent<DamageTaker>() as DamageTaker;
+				if(dt.alive == false) {
+					continue;
+				}
 				var otherPosition = other.transform.position;
 				var distance = Vector3.Distance(currentPosition,otherPosition);
 				if(distance <= closeDistance) {

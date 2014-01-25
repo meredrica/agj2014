@@ -3,7 +3,8 @@ using System.Collections;
 
 public class SpawnEffect : MonoBehaviour {
 	public float mSpawnTime = 1;
-
+	public AnimationCurve Curve;
+	
 	// Use this for initialization
 	void Start () {
 		startEffect();
@@ -16,10 +17,10 @@ public class SpawnEffect : MonoBehaviour {
 	
 	IEnumerator Fade() {
 		for(float f = 0; f < mSpawnTime; f += Time.deltaTime) {
-			transform.localScale = new Vector3(f/mSpawnTime, f/mSpawnTime, f/mSpawnTime);
+			float scaleValue = Curve.Evaluate(f/mSpawnTime);
+			transform.localScale = new Vector3(scaleValue, scaleValue, scaleValue);
 			yield return null;
 		}
-		
 		transform.localScale = new Vector3(1, 1, 1);
 	}
 }

@@ -55,6 +55,7 @@ public class Killer : MonoBehaviour {
 				
 				newSkin.transform.parent = this.gameObject.transform;
 				newSkin.transform.localPosition = Vector3.zero;
+				newSkin.transform.localScale = new Vector3(0.5f, 0.5f, 1);
 				
 				if(newSkin.audio != null) {
 					((AudioSource)Instantiate(newSkin.audio)).Play();

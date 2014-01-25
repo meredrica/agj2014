@@ -70,7 +70,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42cb6da19555f7f43958779e97af7320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mSpawnTime: 1.5
+  mSpawnTime: 1
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: .617019296
+      value: 1.16996932
+      inSlope: .726178348
+      outSlope: .726178348
+      tangentMode: 10
+    - time: 1
+      value: 1
+      inSlope: -.443806499
+      outSlope: -.443806499
+      tangentMode: 10
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

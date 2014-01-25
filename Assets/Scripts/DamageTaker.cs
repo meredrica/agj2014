@@ -5,6 +5,8 @@ public abstract class DamageTaker : MonoBehaviour {
 	protected bool alive = true;
 	protected float timer = 0;
 	public float respawnTime = 4;
+	public float dietime = 2;
+	public AnimationCurve Curve;
 	
 	// Use this for initialization
 	void Start () {
@@ -28,6 +30,10 @@ public abstract class DamageTaker : MonoBehaviour {
 
 		alive = false;
 		rewardPoints(killer.GetComponent<Killer>());
+	}
+	
+	IEnumerator Die() {
+		yield return null;
 	}
 	
 	public bool isAlive() {

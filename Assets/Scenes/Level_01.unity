@@ -474,7 +474,7 @@ MonoBehaviour:
   - {fileID: 220714365}
   - {fileID: 1886616310}
   setup: {fileID: 0}
-  closeDistance: 3
+  closeDistance: 6
 --- !u!4 &1486196218
 Transform:
   m_ObjectHideFlags: 0

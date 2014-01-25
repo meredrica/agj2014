@@ -4,6 +4,8 @@ using System.Collections;
 public class PlayerDamageTaker : DamageTaker {
 
 	public override void takeDamage (GameObject killer) {
-		Destroy(this.gameObject);
+		if(!killer.Equals(this.gameObject)) {
+			Destroy(this.gameObject);
+		}
 	}
 }

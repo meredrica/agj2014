@@ -11,6 +11,14 @@ public class AIController : MonoBehaviour
 
 	float mTimeAccum = 0;
 
+	void Start()
+	{
+		var newTargetPosition = CalculateNewTargetPosition();
+		CharController.TargetPosition = newTargetPosition;
+		CharController.MoveToPosition();
+		mTimeAccum = 0;
+	}
+
 	// Update is called once per frame
 	void Update ()
 	{

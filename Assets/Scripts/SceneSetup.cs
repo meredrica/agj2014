@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class SceneSetup : MonoBehaviour {
-	public int numNPCs;
+	public int numNPCs = 30;
 	public Vector3 minBounds;
 	public Vector3 maxBounds;
-	GameObject[] players;
+	public GameObject[] players;
 	AudioManager audioManager;
 
 	// Use this for initialization

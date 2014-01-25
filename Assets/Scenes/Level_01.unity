@@ -341,8 +341,8 @@ GameObject:
   - 92: {fileID: 1060157215}
   - 124: {fileID: 1060157214}
   - 81: {fileID: 1060157213}
-  - 114: {fileID: 1060157218}
   - 114: {fileID: 1060157219}
+  - 114: {fileID: 1060157218}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -422,9 +422,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e323fdb0135eb641bd35b5c41c4549e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numNPCs: 20
+  numNPCs: 30
   minBounds: {x: -14.5, y: 0, z: 9.5}
   maxBounds: {x: 14.5, y: 0, z: -9.5}
+  players: []
 --- !u!114 &1060157219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,7 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac535f71c7474a543aebbe8420fb38d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameDuration: 8
+  gameDuration: 60
   gameStartDelay: 3
   gameStartEnd: -1
   sceneSetup: {fileID: 1060157218}
@@ -472,7 +473,8 @@ MonoBehaviour:
   - {fileID: 49287742}
   - {fileID: 220714365}
   - {fileID: 1886616310}
-  Players: []
+  setup: {fileID: 0}
+  closeDistance: 3
 --- !u!4 &1486196218
 Transform:
   m_ObjectHideFlags: 0

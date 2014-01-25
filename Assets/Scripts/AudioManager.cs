@@ -3,12 +3,13 @@ using System.Collections;
 
 public class AudioManager : MonoBehaviour {
 	public AudioSource[] AudioSources;
-	public GameObject[] Players;
+	public SceneSetup setup;
+	public float closeDistance = 7;
 
 	bool mPlayMusic;
 	int mClosePlayers;
 
-	void PlayMusic ()
+	public void PlayMusic ()
 	{
 		for (int i = 0; i < 4; i++)
 		{
@@ -33,6 +34,21 @@ public class AudioManager : MonoBehaviour {
 
 	void CheckPlayerDistances()
 	{
+		
 		mClosePlayers = 0;
+		GameObject[] players = setup.players;
+		for(int i=0; i<players.Length;i++) {
+			var current = players[i];
+			for (int j=i+1; j< players.Length; j++) {
+				var other = players[j];
+				var currentPosition = current.transform.position;
+				var otherPosition = other.transform.position;
+				var distance = Vector3.Distance(currentPosition,otherPosition);
+				if(distance <= closeDistance) {
+					mClosePlayers++;
+				}
+			}
+		}
+		Debug.Log("close players: "+ mClosePlayers);
 	}
 }

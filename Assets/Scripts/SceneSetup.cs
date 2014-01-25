@@ -2,24 +2,28 @@
 using System.Collections;
 
 public class SceneSetup : MonoBehaviour {
-	public int numNPCs;
+	public int numNPCs = 30;
 	public Vector3 minBounds;
 	public Vector3 maxBounds;
 	public GameObject[] players;
-	
+	AudioManager audioManager;
+
 	// Use this for initialization
 	public void StartGame ()
 	{
 		PlayerSelection gameManager = FindObjectOfType(typeof(PlayerSelection)) as PlayerSelection;
-
+		audioManager = FindObjectOfType(typeof(AudioManager)) as AudioManager;
+		audioManager.setup = this;
+		audioManager.PlayMusic();
 		int playerCount = gameManager.inputs.Count;
 		players = new GameObject[playerCount];
 		var quat = Quaternion.identity;
 		Debug.Log("spawning "+playerCount+" players");
 		for(int i = 0; i<playerCount; i++)
 		{
-			// TODO: random position
-			var position = new Vector3(0,0,0);
+			var newX = (int)Random.Range(minBounds.x, maxBounds.x);
+			var newZ = (int)Random.Range(minBounds.z, maxBounds.z);
+			var position = new Vector3(newX, 0, newZ);
 			
 			players[i] = (GameObject) Instantiate(Resources.Load<GameObject>("Player"),position,quat);
 			players[i].GetComponent<PlayerMover>().wrapper = gameManager.inputs[i];
@@ -35,7 +39,7 @@ public class SceneSetup : MonoBehaviour {
 			var newZ = (int)Random.Range(minBounds.z, maxBounds.z);
 			var position = new Vector3(newX, 0, newZ);
 
-			GameObject npc = (GameObject)Instantiate(Resources.Load<GameObject>("NPC"));
+			GameObject npc = (GameObject)Instantiate(Resources.Load<GameObject>("NPC"),position,quat);
 			var skinName = "Skins/Skin_01";
 
 			switch(i % playerCount) {

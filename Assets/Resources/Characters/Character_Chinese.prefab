@@ -238,7 +238,7 @@ MonoBehaviour:
   CharController: {fileID: 11400002}
   MinBounds: {x: -14.5, y: 0, z: 9.5}
   MaxBounds: {x: 14.5, y: 0, z: -9.5}
-  NewTargetPositionInterval: 1
+  NewTargetPositionInterval: 3
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

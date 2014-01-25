@@ -423,8 +423,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numNPCs: 30
-  minBounds: {x: 0, y: 0, z: 0}
-  maxBounds: {x: 0, y: 0, z: 0}
+  minBounds: {x: -14.5, y: 0, z: 9.5}
+  maxBounds: {x: 14.5, y: 0, z: -9.5}
   players: []
 --- !u!114 &1060157219
 MonoBehaviour:
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac535f71c7474a543aebbe8420fb38d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameDuration: 8
+  gameDuration: 60
   gameStartDelay: 3
   gameStartEnd: -1
   sceneSetup: {fileID: 1060157218}

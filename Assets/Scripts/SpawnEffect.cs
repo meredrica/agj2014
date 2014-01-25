@@ -18,9 +18,17 @@ public class SpawnEffect : MonoBehaviour {
 	IEnumerator Fade() {
 		for(float f = 0; f < mSpawnTime; f += Time.deltaTime) {
 			float scaleValue = Curve.Evaluate(f/mSpawnTime);
-			transform.localScale = new Vector3(scaleValue, scaleValue, scaleValue);
+			transform.localScale = generateScale(transform.localScale, scaleValue);
+			
 			yield return null;
 		}
-		transform.localScale = new Vector3(1, 1, 1);
+		
+		transform.localScale = generateScale(transform.localScale, 1);
+	}
+	
+	private Vector3 generateScale(Vector3 oldScale, float scale) {
+				return new Vector3(oldScale.x < 0 ? -scale : scale,
+				                   oldScale.y < 0 ? -scale : scale,
+				                   oldScale.z < 0 ? -scale : scale);
 	}
 }

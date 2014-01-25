@@ -46,19 +46,19 @@ public class Killer : MonoBehaviour {
 			//Change skin
 			int count = transform.childCount;
 			if(count > 0) {
-				Debug.Log("ChildCount: " + transform.childCount);
 				GameObject newSkin = (GameObject)Instantiate(nearestDt.transform.GetChild(0).gameObject);
 				
-				for(int i = 0; i < count; i++) {
-					Destroy(transform.GetChild(i).gameObject);
-				}
+				Destroy(transform.GetChild(0).gameObject);
 				
 				newSkin.transform.parent = this.gameObject.transform;
 				newSkin.transform.localPosition = Vector3.zero;
 				newSkin.transform.localScale = new Vector3(0.5f, 0.5f, 1);
 				
 				if(newSkin.audio != null) {
-					((AudioSource)Instantiate(newSkin.audio)).Play();
+					GameObject go = new GameObject();
+					go.AddComponent<AudioSource>().clip = newSkin.audio.clip;
+					go.audio.Play ();
+					StartCoroutine(KillMe(go));
 				}
 			}
 		
@@ -66,6 +66,12 @@ public class Killer : MonoBehaviour {
 		}
 		
 		Debug.Log("Score: " + killScore);
+	}
+	
+	IEnumerator KillMe (GameObject go)
+	{
+		yield return new WaitForSeconds(2);
+		Destroy(go);
 	}
 	
 	public int KillScore {

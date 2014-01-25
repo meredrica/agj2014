@@ -15,8 +15,9 @@ public class SceneSetup : MonoBehaviour {
 		var quat = Quaternion.identity;
 		Debug.Log("spawning "+playerCount+" players");
 		for(int i = 0; i<playerCount; i++) {
-			// TODO: random position
-			var position = new Vector3(0,0,0);
+			var newX = (int)Random.Range(minBounds.x, maxBounds.x);
+			var newZ = (int)Random.Range(minBounds.z, maxBounds.z);
+			var position = new Vector3(newX, 0, newZ);
 			
 			players[i]= (GameObject) Instantiate(Resources.Load<GameObject>("Player_0"+(i+1)),position,quat);
 			players[i].GetComponent<PlayerMover>().wrapper = gameManager.inputs[i];

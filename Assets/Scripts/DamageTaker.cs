@@ -2,7 +2,7 @@
 using System.Collections;
 
 public abstract class DamageTaker : MonoBehaviour {
-	protected bool alive = true;
+	public bool alive = true;
 	protected float timer = 0;
 	public float respawnTime = 4;
 	public float dietime = 2;

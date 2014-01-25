@@ -3,7 +3,10 @@ using System.Collections;
 
 public class Killer : MonoBehaviour {
 	public float radius;
+	public float attackCooldown = 1;
+	
 	private int killScore;
+	private float attackTimer = 0;
 	
 	// Use this for initialization
 	void Start () {
@@ -12,10 +15,16 @@ public class Killer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(attackTimer > 0) {
+			attackTimer -= Time.deltaTime;
+		}
 	}
 	
 	public void kill() {
+		if(attackTimer > 0) return;
+		
+		attackTimer = attackCooldown;
+		
 		var gameObjects = FindObjectsOfType(typeof(GameObject)) as GameObject[];
 		DamageTaker nearestDt = null;
 		float nearestDistance = Mathf.Pow(radius, 2);

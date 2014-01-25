@@ -56,6 +56,7 @@ public class SceneSetup : MonoBehaviour {
 			
 			GameObject skin = (GameObject)Instantiate(Resources.Load<GameObject>(skinName));
 			skin.transform.parent = npc.transform;
+			skin.transform.localPosition = Vector3.zero;
 
 			AIController npcController = npc.GetComponent<AIController>();
 			npcController.MinBounds = minBounds;

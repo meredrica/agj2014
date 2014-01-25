@@ -126,9 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad618ed59e98bce489510a143b51a810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetPosition: {x: -13, y: 0, z: 1}
+  TargetPosition: {x: 0, y: 0, z: 1}
   UpdatePositionOffset: 0
-  Speed: 8
+  Speed: 2
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd801fe5488e3d47990ed12bfceea0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  respawnTime: 4
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

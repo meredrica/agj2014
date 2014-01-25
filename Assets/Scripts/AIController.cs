@@ -30,6 +30,6 @@ public class AIController : MonoBehaviour
 		var newX = (int)Random.Range(MinBounds.x, MaxBounds.x);
 		var newZ = (int)Random.Range(MinBounds.z, MaxBounds.z);
 
-		return new Vector3(newX, 0, newZ);
+		return new Vector3(newX, transform.position.y, newZ);
 	}
 }

@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400004}
   m_Layer: 0
-  m_Name: Character_Russian
+  m_Name: Character_Chinese
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -286,7 +286,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_SortingLayerID: 1733941231
-  m_Sprite: {fileID: 21300000, guid: d10dbdb360459e2479ecf30ce57e3a29, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fcd64c256f644944fbc52ba8cc17a3dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21200002
 SpriteRenderer:
@@ -309,7 +309,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_SortingLayerID: 4229709265
-  m_Sprite: {fileID: 21300002, guid: d10dbdb360459e2479ecf30ce57e3a29, type: 3}
+  m_Sprite: {fileID: 21300002, guid: fcd64c256f644944fbc52ba8cc17a3dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21200004
 SpriteRenderer:
@@ -332,7 +332,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_SortingLayerID: 2960230725
-  m_Sprite: {fileID: 21300004, guid: d10dbdb360459e2479ecf30ce57e3a29, type: 3}
+  m_Sprite: {fileID: 21300004, guid: fcd64c256f644944fbc52ba8cc17a3dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

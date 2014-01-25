@@ -15,17 +15,37 @@ public abstract class DamageTaker : MonoBehaviour {
 	
 	public void takeDamage (GameObject killer) {
 		var allRenderer = GetComponentsInChildren<Renderer>();
+		var parent = GetParent(allRenderer[0].transform);
+
+		var blood = Instantiate(Resources.Load<GameObject>("Blood"),parent.position,Quaternion.identity) as Transform;
+		//blood.localScale *= Random.Range(0.8f, 1.2f);
+		//blood.localEulerAngles = new Vector3(0, Random.Range(0, 359), 0);
+
 		foreach(Renderer rend in allRenderer)
 		{
 			rend.enabled = false;
 		}
-		
+
 		alive = false;
 		rewardPoints(killer.GetComponent<Killer>());
 	}
 	
 	public bool isAlive() {
 		return alive;
+	}
+
+	Transform GetParent(Transform trans)
+	{
+		var parent = trans;
+		var result = parent;
+		while (parent != null)
+		{
+			parent = parent.parent;
+			if (parent != null)
+				result = parent;
+		}
+
+		return result;
 	}
 	
 	void Update () {

@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: ScoreElement
+  m_Name: SystemMessages
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,16 +35,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3eb6037ae9465a49a7a641985888995, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c9a4099d4a61b145adbe9e45bf46bc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Anchor: 0
-  Flag: {fileID: 2800000, guid: f5d1664cf960ded4d9223e9b54ae131e, type: 3}
-  KillIcon: {fileID: 2800000, guid: 60b11eb2467b2b041b113ec6088f9c5a, type: 3}
-  DeathIcon: {fileID: 2800000, guid: d77de1ef6bfba44468fcf507634ac8da, type: 3}
   MyFont: {fileID: 12800000, guid: 91474bf6ddcc7fe459c351e69756661a, type: 3}
-  Kills: 12
-  Deaths: 5
+  Message: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

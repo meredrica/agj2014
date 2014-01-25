@@ -6,7 +6,8 @@ public class GameTimer : MonoBehaviour {
 	public float gameStartDelay = 3;
 	public float gameStartEnd = -1;
 	public SceneSetup sceneSetup;
-	
+	public SystemMessages SysMessage;
+
 	int state;
 	bool start;
 	float timer;
@@ -19,7 +20,7 @@ public class GameTimer : MonoBehaviour {
 	}
 	
 	private void displayCountdown(string message) {
-		Debug.Log (message);
+		SysMessage.Message = message;
 	}
 	
 	private void gameStarted() {
@@ -46,6 +47,7 @@ public class GameTimer : MonoBehaviour {
 		} else if(timer < state && state == 0 && start) {
 			displayCountdown("GO!");
 			state = -1;
+			StartCoroutine("HideGo");
 		} else if(timer < gameStartEnd && start) {
 			timer = gameDuration;
 			gameStarted();
@@ -55,5 +57,11 @@ public class GameTimer : MonoBehaviour {
 			gameEnded ();
 			state = -1;
 		}
+	}
+
+	IEnumerator HideGo()
+	{
+		yield return new WaitForSeconds(1);
+		displayCountdown("");
 	}
 }

@@ -85,6 +85,7 @@ GameObject:
   - 114: {fileID: 20856700}
   - 114: {fileID: 20856699}
   - 114: {fileID: 20856698}
+  - 114: {fileID: 20856702}
   m_Layer: 0
   m_Name: Character_01
   m_TagString: Untagged
@@ -99,7 +100,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1524545253}
   m_GameObject: {fileID: 20856697}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d613f20a4fe11a40aa49452374ead73, type: 3}
   m_Name: 
@@ -113,14 +114,15 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1524545253}
   m_GameObject: {fileID: 20856697}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ddfb53518aec01f4ca16523fac3e26af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 20856700}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &20856700
 MonoBehaviour:
@@ -129,7 +131,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1524545253}
   m_GameObject: {fileID: 20856697}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad618ed59e98bce489510a143b51a810, type: 3}
   m_Name: 
@@ -149,6 +151,22 @@ Transform:
   m_Children:
   - {fileID: 1717939686}
   m_Father: {fileID: 0}
+--- !u!114 &20856702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 20856697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73cc36b020fc8045bc65881bf469e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 7
+  controllerPlayer: 0
+  keyboardPlayer: -1
+  MinBounds: {x: -15, y: 0, z: -10}
+  MaxBounds: {x: 15, y: 0, z: 10}
 --- !u!1 &22387047
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,8 +224,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 22387051}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &22387051
 MonoBehaviour:
@@ -263,6 +282,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8a7618489b97f7f40a091b4db34b5641, type: 2}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
   m_RootGameObject: {fileID: 1614258632}
@@ -302,6 +329,14 @@ Prefab:
     - target: {fileID: 400002, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
@@ -353,8 +388,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 41153084}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &41153084
 MonoBehaviour:
@@ -428,8 +464,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 46786215}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &46786215
 MonoBehaviour:
@@ -569,6 +606,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8a7618489b97f7f40a091b4db34b5641, type: 2}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
   m_RootGameObject: {fileID: 2053824286}
@@ -631,8 +676,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 77998820}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &77998820
 MonoBehaviour:
@@ -694,8 +740,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 107182355}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &107182355
 MonoBehaviour:
@@ -1158,8 +1205,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 191218544}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &191218544
 MonoBehaviour:
@@ -1215,6 +1263,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8a7618489b97f7f40a091b4db34b5641, type: 2}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
   m_RootGameObject: {fileID: 557171350}
@@ -1259,6 +1315,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8a7618489b97f7f40a091b4db34b5641, type: 2}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
   m_RootGameObject: {fileID: 1699529990}
@@ -1303,6 +1367,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f16289f567a50f7458789cda4167a2a5, type: 2}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
   m_RootGameObject: {fileID: 1130807377}
@@ -1419,6 +1491,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f16289f567a50f7458789cda4167a2a5, type: 2}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
   m_RootGameObject: {fileID: 22387047}
@@ -1469,8 +1549,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 344563524}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &344563524
 MonoBehaviour:
@@ -1538,6 +1619,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c20b3113539ee004fad4c59f495c3c0b, type: 2}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
   m_RootGameObject: {fileID: 1115824726}
@@ -1600,8 +1689,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 375484564}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &375484564
 MonoBehaviour:
@@ -1675,8 +1765,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 377233048}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &377233048
 MonoBehaviour:
@@ -1732,6 +1823,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f16289f567a50f7458789cda4167a2a5, type: 2}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
   m_RootGameObject: {fileID: 818581363}
@@ -1776,6 +1875,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8a7618489b97f7f40a091b4db34b5641, type: 2}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
   m_RootGameObject: {fileID: 1825512481}
@@ -1815,6 +1922,14 @@ Prefab:
     - target: {fileID: 400002, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
@@ -1866,8 +1981,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 500321680}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &500321680
 MonoBehaviour:
@@ -1953,8 +2069,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 524373220}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &524373220
 MonoBehaviour:
@@ -2010,6 +2127,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f16289f567a50f7458789cda4167a2a5, type: 2}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
   m_RootGameObject: {fileID: 978592782}
@@ -2122,6 +2247,14 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
   m_RootGameObject: {fileID: 524373216}
@@ -2184,8 +2317,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 557171354}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &557171354
 MonoBehaviour:
@@ -2313,6 +2447,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f16289f567a50f7458789cda4167a2a5, type: 2}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
   m_RootGameObject: {fileID: 861577966}
@@ -2375,8 +2517,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 566897405}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &566897405
 MonoBehaviour:
@@ -2716,6 +2859,14 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
   m_RootGameObject: {fileID: 899211464}
@@ -2779,8 +2930,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 627575408}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &627575410
 MonoBehaviour:
@@ -2835,6 +2987,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f16289f567a50f7458789cda4167a2a5, type: 2}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
   m_RootGameObject: {fileID: 77998816}
@@ -2874,6 +3034,14 @@ Prefab:
     - target: {fileID: 400002, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
@@ -3063,6 +3231,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c20b3113539ee004fad4c59f495c3c0b, type: 2}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
   m_RootGameObject: {fileID: 768930268}
@@ -3107,6 +3283,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8a7618489b97f7f40a091b4db34b5641, type: 2}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
   m_RootGameObject: {fileID: 1304924267}
@@ -3229,8 +3413,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 755963009}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &755963009
 MonoBehaviour:
@@ -3304,8 +3489,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 768930271}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &768930271
 MonoBehaviour:
@@ -3379,8 +3565,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 771246407}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &771246407
 MonoBehaviour:
@@ -3448,6 +3635,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8a7618489b97f7f40a091b4db34b5641, type: 2}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
   m_RootGameObject: {fileID: 1404623194}
@@ -3570,8 +3765,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 811859820}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &811859820
 MonoBehaviour:
@@ -3633,8 +3829,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 818581366}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &818581366
 MonoBehaviour:
@@ -3792,8 +3989,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 861137591}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &861137591
 MonoBehaviour:
@@ -3867,8 +4065,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 861577970}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &861577970
 MonoBehaviour:
@@ -3920,6 +4119,14 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
   m_RootGameObject: {fileID: 627575406}
@@ -3964,6 +4171,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c20b3113539ee004fad4c59f495c3c0b, type: 2}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
   m_RootGameObject: {fileID: 1228030477}
@@ -4098,8 +4313,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 899211468}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &899211468
 MonoBehaviour:
@@ -4227,6 +4443,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c20b3113539ee004fad4c59f495c3c0b, type: 2}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
   m_RootGameObject: {fileID: 41153081}
@@ -4487,6 +4711,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f16289f567a50f7458789cda4167a2a5, type: 2}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
   m_RootGameObject: {fileID: 1743982402}
@@ -4537,8 +4769,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 978592785}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &978592785
 MonoBehaviour:
@@ -4606,6 +4839,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f16289f567a50f7458789cda4167a2a5, type: 2}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
   m_RootGameObject: {fileID: 1334390513}
@@ -4722,6 +4963,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8a7618489b97f7f40a091b4db34b5641, type: 2}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
   m_RootGameObject: {fileID: 1326801111}
@@ -4928,8 +5177,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1057946831}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &1057946831
 MonoBehaviour:
@@ -5137,6 +5387,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8a7618489b97f7f40a091b4db34b5641, type: 2}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
   m_RootGameObject: {fileID: 771246404}
@@ -5199,8 +5457,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1114019233}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &1114019233
 MonoBehaviour:
@@ -5262,8 +5521,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1115824729}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &1115824729
 MonoBehaviour:
@@ -5349,8 +5609,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1130807381}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &1130807381
 MonoBehaviour:
@@ -5474,6 +5735,14 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
   m_RootGameObject: {fileID: 344563521}
@@ -5524,8 +5793,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1144874591}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &1144874591
 MonoBehaviour:
@@ -5665,6 +5935,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f16289f567a50f7458789cda4167a2a5, type: 2}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
   m_RootGameObject: {fileID: 1402855425}
@@ -5709,6 +5987,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c20b3113539ee004fad4c59f495c3c0b, type: 2}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
   m_RootGameObject: {fileID: 1274270238}
@@ -5759,8 +6045,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1219802368}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &1219802368
 MonoBehaviour:
@@ -5846,8 +6133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1228030481}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &1228030481
 MonoBehaviour:
@@ -5903,6 +6191,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f16289f567a50f7458789cda4167a2a5, type: 2}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
   m_RootGameObject: {fileID: 1988325850}
@@ -5965,8 +6261,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1274270242}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &1274270242
 MonoBehaviour:
@@ -6166,6 +6463,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c20b3113539ee004fad4c59f495c3c0b, type: 2}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
   m_RootGameObject: {fileID: 1493517895}
@@ -6216,8 +6521,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1304924270}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &1304924270
 MonoBehaviour:
@@ -6435,8 +6741,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1326801114}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &1326801114
 MonoBehaviour:
@@ -6504,6 +6811,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c20b3113539ee004fad4c59f495c3c0b, type: 2}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
   m_RootGameObject: {fileID: 811859816}
@@ -6566,8 +6881,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1334390517}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &1334390517
 MonoBehaviour:
@@ -6623,6 +6939,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c20b3113539ee004fad4c59f495c3c0b, type: 2}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
   m_RootGameObject: {fileID: 1219802365}
@@ -6745,8 +7069,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1402855428}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &1402855428
 MonoBehaviour:
@@ -6820,8 +7145,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1404623197}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &1404623197
 MonoBehaviour:
@@ -6889,6 +7215,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c20b3113539ee004fad4c59f495c3c0b, type: 2}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
   m_RootGameObject: {fileID: 107182352}
@@ -6933,6 +7267,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c20b3113539ee004fad4c59f495c3c0b, type: 2}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
   m_RootGameObject: {fileID: 755963006}
@@ -6977,6 +7319,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f16289f567a50f7458789cda4167a2a5, type: 2}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
   m_RootGameObject: {fileID: 46786212}
@@ -7093,6 +7443,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f16289f567a50f7458789cda4167a2a5, type: 2}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
   m_RootGameObject: {fileID: 1954836040}
@@ -7170,8 +7528,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1493517897}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!1001 &1498534875
 Prefab:
@@ -7212,6 +7571,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8a7618489b97f7f40a091b4db34b5641, type: 2}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
   m_RootGameObject: {fileID: 2060472469}
@@ -7324,6 +7691,26 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
   m_RootGameObject: {fileID: 20856697}
@@ -7386,8 +7773,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1537123130}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &1537123130
 MonoBehaviour:
@@ -7449,8 +7837,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1552239567}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &1552239567
 MonoBehaviour:
@@ -7518,6 +7907,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8a7618489b97f7f40a091b4db34b5641, type: 2}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
   m_RootGameObject: {fileID: 1057946827}
@@ -7706,6 +8103,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8a7618489b97f7f40a091b4db34b5641, type: 2}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
   m_RootGameObject: {fileID: 1537123126}
@@ -7768,8 +8173,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1591262201}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &1591262201
 MonoBehaviour:
@@ -7843,8 +8249,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1607645870}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 2
 --- !u!114 &1607645870
 MonoBehaviour:
@@ -7906,8 +8313,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1614258635}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &1614258635
 MonoBehaviour:
@@ -8269,8 +8677,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1653186820}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &1653186820
 MonoBehaviour:
@@ -8443,8 +8852,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1699529992}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!1 &1702899497
 GameObject:
@@ -8625,6 +9035,14 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
   m_RootGameObject: {fileID: 375484560}
@@ -8741,6 +9159,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c20b3113539ee004fad4c59f495c3c0b, type: 2}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
   m_RootGameObject: {fileID: 377233044}
@@ -8791,8 +9217,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1743982405}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &1743982405
 MonoBehaviour:
@@ -8928,6 +9355,14 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
   m_RootGameObject: {fileID: 500321677}
@@ -8990,8 +9425,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1825512485}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &1825512485
 MonoBehaviour:
@@ -9042,6 +9478,14 @@ Prefab:
     - target: {fileID: 400002, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
@@ -9237,8 +9681,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1917891166}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 1
 --- !u!114 &1917891166
 MonoBehaviour:
@@ -9378,6 +9823,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c20b3113539ee004fad4c59f495c3c0b, type: 2}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
   m_RootGameObject: {fileID: 1607645866}
@@ -9428,8 +9881,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1954836043}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &1954836043
 MonoBehaviour:
@@ -9497,6 +9951,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f16289f567a50f7458789cda4167a2a5, type: 2}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db6fa67e53be36f4bb46626f645599ee, type: 2}
   m_RootGameObject: {fileID: 566897401}
@@ -9681,6 +10143,14 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
   m_RootGameObject: {fileID: 191218540}
@@ -9743,8 +10213,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 1988325854}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 4
 --- !u!114 &1988325854
 MonoBehaviour:
@@ -9800,6 +10271,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c20b3113539ee004fad4c59f495c3c0b, type: 2}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b44010cd8c101f24e91b58466fdeaaa5, type: 2}
   m_RootGameObject: {fileID: 1114019229}
@@ -9844,6 +10323,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8a7618489b97f7f40a091b4db34b5641, type: 2}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be79016702b711a49a78e4c5362e9a67, type: 2}
   m_RootGameObject: {fileID: 1653186817}
@@ -9906,8 +10393,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 2053824290}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &2053824290
 MonoBehaviour:
@@ -9969,8 +10457,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 2060472472}
-  MinBounds: {x: -14.5, y: 0, z: 9.5}
-  MaxBounds: {x: 14.5, y: 0, z: -9.5}
+  MinBounds: {x: -14.5, y: 0, z: -9.5}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
+  MoveDistanze: 3
   NewTargetPositionInterval: 3
 --- !u!114 &2060472472
 MonoBehaviour:
@@ -10105,6 +10594,14 @@ Prefab:
     - target: {fileID: 400002, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MinBounds.z
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}
+      propertyPath: MaxBounds.z
+      value: 9.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166f9e7cd197f734eab485ef62a49762, type: 2}

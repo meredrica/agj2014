@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad618ed59e98bce489510a143b51a810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetPosition: {x: 0, y: 0, z: 0}
+  TargetPosition: {x: -13, y: 0, z: 1}
   UpdatePositionOffset: 0
   Speed: 8
 --- !u!114 &11400004

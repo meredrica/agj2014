@@ -112,6 +112,8 @@ public class PlayerMover : MonoBehaviour {
 	public float speed = 7;
 	public int controllerPlayer = -1;
 	public int keyboardPlayer = -1;
+	public Vector3 MinBounds = new Vector3(-15, 0, -10);
+	public Vector3 MaxBounds = new Vector3(15, 0, 10);
 	
 	InputWrapper wrapper = null;
 	
@@ -127,10 +129,26 @@ public class PlayerMover : MonoBehaviour {
 		
 		
 		if(wrapper != null) {
-			Debug.Log("getX: "+wrapper.getXMod());
-			Debug.Log("getZ: "+wrapper.getZMod());
-					//TODO use move script
-				transform.Translate (wrapper.getXMod() * speed * delta,0 , wrapper.getZMod() * speed * delta);
+			//TODO use move script
+			Vector3 result = new Vector3(wrapper.getXMod() * speed * delta,0 , wrapper.getZMod() * speed * delta) + transform.position;
+			
+			if(result.x < MinBounds.x) {
+				Debug.Log("x < minX");
+				result.x = MinBounds.x;
+			} else if(result.x > MaxBounds.x) {
+				Debug.Log("x > maxX");
+				result.x = MaxBounds.x;
+			}
+			
+			if(result.z < MinBounds.z) {
+				Debug.Log("z < minZ");
+				result.z = MinBounds.z;
+			} else if(result.z > MaxBounds.z) {
+				Debug.Log("z > maxZ");
+				result.z = MaxBounds.z;
+			}
+			
+			transform.position = result;
 			
 			if(wrapper.murder()) {
 				//TODO Send murder message

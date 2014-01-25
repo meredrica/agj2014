@@ -2,11 +2,13 @@
 using System.Collections;
 
 public class PlayerDamageTaker : DamageTaker {
+	public static int reward = 25;
+
 	private IEnumerator respawn() {
 		yield return new WaitForSeconds(4);
 	}
 	
-	protected override void rewardPoints ()
+	protected override void rewardPoints (Killer killer)
 	{
 		//Rewards points
 		
@@ -19,5 +21,7 @@ public class PlayerDamageTaker : DamageTaker {
 		var newZ = (int)Random.Range(minBounds.z, maxBounds.z);
 		
 		transform.position = new Vector3(newX, 0, newZ);
+		
+		killer.KillScore += reward;
 	}
 }

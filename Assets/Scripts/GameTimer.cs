@@ -5,6 +5,7 @@ public class GameTimer : MonoBehaviour {
 	public float gameDuration = 8;
 	public float gameStartDelay = 3;
 	public float gameStartEnd = -1;
+	public SceneSetup sceneSetup;
 	
 	int state;
 	bool start;
@@ -23,10 +24,16 @@ public class GameTimer : MonoBehaviour {
 	
 	private void gameStarted() {
 		Debug.Log ("Game started!");
+		sceneSetup.StartGame();
 	}
 	
 	private void gameEnded() {
 		Debug.Log ("Game ended!");
+		
+		foreach(var player in sceneSetup.players) {
+			PlayerMover mover = player.GetComponent<PlayerMover>();
+			mover.wrapper = null;
+		}
 	}
 	
 	// Update is called once per frame
@@ -38,10 +45,10 @@ public class GameTimer : MonoBehaviour {
 			state--;
 		} else if(timer < state && state == 0 && start) {
 			displayCountdown("GO!");
-			gameStarted();
 			state = -1;
 		} else if(timer < gameStartEnd && start) {
 			timer = gameDuration;
+			gameStarted();
 			state = 5;
 			start = false;
 		} else if(timer < state && state == 0 && !start) {

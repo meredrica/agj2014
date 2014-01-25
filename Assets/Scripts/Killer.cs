@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Killer : MonoBehaviour {
 	public float radius;
+	private int killScore;
 	
 	// Use this for initialization
 	void Start () {
@@ -33,9 +34,37 @@ public class Killer : MonoBehaviour {
 		}
 		
 		if(nearestDt != null) {
+			//Change skin
+			int count = transform.childCount;
+			if(count > 0) {
+				Debug.Log("ChildCount: " + transform.childCount);
+				GameObject newSkin = (GameObject)Instantiate(nearestDt.transform.GetChild(0).gameObject);
+				
+				for(int i = 0; i < count; i++) {
+					Destroy(transform.GetChild(i).gameObject);
+				}
+				
+				newSkin.transform.parent = this.gameObject.transform;
+				newSkin.transform.localPosition = Vector3.zero;
+				
+				if(newSkin.audio != null) {
+					((AudioSource)Instantiate(newSkin.audio)).Play();
+				}
+			}
+		
 			nearestDt.takeDamage(this.gameObject);
 		}
+		
+		Debug.Log("Score: " + killScore);
 	}
 	
+	public int KillScore {
+		get {
+			return this.killScore;
+		}
+		set {
+			killScore = value;
+		}
+	}
 	
 }

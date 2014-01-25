@@ -5,10 +5,10 @@ public class SceneSetup : MonoBehaviour {
 	public int numNPCs;
 	public Vector3 minBounds;
 	public Vector3 maxBounds;
-	GameObject[] players;
+	public GameObject[] players;
 	
 	// Use this for initialization
-	void Start ()
+	public void StartGame ()
 	{
 		PlayerSelection gameManager = FindObjectOfType(typeof(PlayerSelection)) as PlayerSelection;
 

@@ -8,7 +8,7 @@ public interface InputWrapper {
 	bool murder();
 }
 
-public class Keyboard1Controls : InputWrapper {
+public class KeyboardRightControls : InputWrapper {
 	public float getXMod() {
 		if (Input.GetKey (KeyCode.LeftArrow)) {
 			return -1;
@@ -37,16 +37,15 @@ public class Keyboard1Controls : InputWrapper {
 public class GamepadControls : InputWrapper {
 	PlayerIndex index;
 	
-	public GamepadControls(int player) {
-		index = (PlayerIndex)player;
+	public GamepadControls(PlayerIndex player) {
+		index = player;
 	}
 	
 	public float getXMod() {
 		var state = GamePad.GetState(index);
 		
-		if (Mathf.Abs (state.ThumbSticks.Left.X) > 0) {
-			return state.ThumbSticks.Left.X;
-			// TODO: wrap to [-1,1]
+		if (Mathf.Abs (state.ThumbSticks.Left.X) > 0.3) {
+			return Mathf.Sign(state.ThumbSticks.Left.X);
 		} else {
 			if(state.DPad.Left.Equals(ButtonState.Pressed)) {
 				return -1;
@@ -61,9 +60,8 @@ public class GamepadControls : InputWrapper {
 	public float getZMod() {
 		var state = GamePad.GetState(index);
 		
-		if (Mathf.Abs (state.ThumbSticks.Left.Y) > 0) {
-			return state.ThumbSticks.Left.X;
-			// TODO: wrap to [-1,1]
+		if (Mathf.Abs (state.ThumbSticks.Left.Y) > 0.3) {
+			return Mathf.Sign(state.ThumbSticks.Left.Y);
 		} else {
 			if(state.DPad.Down.Equals(ButtonState.Pressed)) {
 				return -1;
@@ -83,7 +81,7 @@ public class GamepadControls : InputWrapper {
 	*/}
 }
 
-public class Keyboard2Controls : InputWrapper {
+public class KeyboardLeftControls : InputWrapper {
 	public float getXMod() {
 		if (Input.GetKey (KeyCode.A)) {
 			return -1;
@@ -119,26 +117,12 @@ public class PlayerMover : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		checkWrapper();
 	}
-	
-	private void checkWrapper() {
-		if(wrapper == null) {
-			if(controllerPlayer > -1) {
-				wrapper = new GamepadControls(controllerPlayer);
 
-			} else if(keyboardPlayer == 0) {
-				wrapper = new Keyboard1Controls();
-			} else if(keyboardPlayer == 1) {
-				wrapper = new Keyboard2Controls();
-			}
-		}
-	}
 	
 	// Update is called once per frame
 	void Update () {
-		checkWrapper();
-	
+
 		float delta = Time.deltaTime;
 		
 		

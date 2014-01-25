@@ -9,7 +9,7 @@ public interface InputWrapper {
 }
 
 public class Keyboard1Controls : InputWrapper {
-	public override float getXMod() {
+	public float getXMod() {
 		if (Input.GetKey (KeyCode.LeftArrow)) {
 			return -1;
 		} else if (Input.GetKey(KeyCode.RightArrow)) {
@@ -19,7 +19,7 @@ public class Keyboard1Controls : InputWrapper {
 		return 0;
 	}
 	
-	public override float getYMod() {
+	public float getYMod() {
 		if (Input.GetKey (KeyCode.UpArrow)) {
 			return -1;
 		} else if (Input.GetKey(KeyCode.PageDown)) {
@@ -29,7 +29,7 @@ public class Keyboard1Controls : InputWrapper {
 		return 0;
 	}
 	
-	public override bool murder() {
+	public bool murder() {
 		return Input.GetKeyDown(KeyCode.RightControl);
 	}
 }
@@ -41,35 +41,35 @@ public class GamepadControls : InputWrapper {
 		index = (PlayerIndex)player;
 	}
 	
-	public override float getXMod() {
+	public float getXMod() {
 		var state = GamePad.GetState(index);
 		
-		if(Mathf.Abs (state.ThumbSticks.Left.X) > 0 && (state.DPad.Left || state.DPad.Right)) {
+		if(Mathf.Abs (state.ThumbSticks.Left.X) > 0) {
 			return state.ThumbSticks.Left.X;
-		} else if(state.DPad.Left) {
+		} else if((bool)state.DPad.Left) {
 			return -1;
-		} else if(state.DPad.Right) {
+		} else if((bool)state.DPad.Right) {
 			return 1;
 		}
 		
 		return 0;
 	}
 	
-	public override float getYMod() {
+	public float getYMod() {
 		var state = GamePad.GetState(index);
 		
-		if(Mathf.Abs (state.ThumbSticks.Left.Y) > 0 && (state.DPad.Up || state.DPad.Down)) {
+		if(Mathf.Abs (state.ThumbSticks.Left.Y) > 0) {
 			return state.ThumbSticks.Left.X;
-		} else if(state.DPad.Down) {
+		} else if((bool)state.DPad.Down) {
 			return -1;
-		} else if(state.DPad.Up) {
+		} else if((bool)state.DPad.Up) {
 			return 1;
 		}
 		
 		return 0;
 	}
 	
-	public override bool murder() {
+	public bool murder() {
 		var state = GamePad.GetState(index);
 		
 		return state.Buttons.X;
@@ -77,7 +77,7 @@ public class GamepadControls : InputWrapper {
 }
 
 public class Keyboard2Controls : InputWrapper {
-	public override float getXMod() {
+	public float getXMod() {
 		if (Input.GetKey (KeyCode.A)) {
 			return -1;
 		} else if (Input.GetKey(KeyCode.D)) {
@@ -87,7 +87,7 @@ public class Keyboard2Controls : InputWrapper {
 		return 0;
 	}
 	
-	public override float getYMod() {
+	public float getYMod() {
 		if (Input.GetKey (KeyCode.S)) {
 			return -1;
 		} else if (Input.GetKey(KeyCode.W)) {
@@ -97,7 +97,7 @@ public class Keyboard2Controls : InputWrapper {
 		return 0;
 	}
 	
-	public override bool murder() {
+	public bool murder() {
 		return Input.GetKeyDown(KeyCode.Space);
 	}
 }

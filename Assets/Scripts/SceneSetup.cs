@@ -8,7 +8,7 @@ public class SceneSetup : MonoBehaviour {
 	GameObject[] players;
 	
 	// Use this for initialization
-	void Start () {
+	public void StartGame () {
 		PlayerSelection gameManager = FindObjectOfType(typeof(PlayerSelection)) as PlayerSelection;
 		int playerCount = gameManager.inputs.Count;
 		players = new GameObject[playerCount];

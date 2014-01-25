@@ -5,6 +5,7 @@ public class GameTimer : MonoBehaviour {
 	public float gameDuration = 8;
 	public float gameStartDelay = 3;
 	public float gameStartEnd = -1;
+	public SceneSetup sceneSetup;
 	
 	int state;
 	bool start;
@@ -23,6 +24,7 @@ public class GameTimer : MonoBehaviour {
 	
 	private void gameStarted() {
 		Debug.Log ("Game started!");
+		sceneSetup.StartGame();
 	}
 	
 	private void gameEnded() {

@@ -149,7 +149,7 @@ public class PlayerMover : MonoBehaviour {
 			transform.position = result;
 			
 			if(wrapper.murder()) {
-				//TODO Send murder message
+				GetComponent<Killer>().kill();
 			}
 		}
 	}

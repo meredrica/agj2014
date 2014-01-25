@@ -5,14 +5,28 @@ public class SceneSetup : MonoBehaviour {
 	public int numNPCs;
 	public Vector3 minBounds;
 	public Vector3 maxBounds;
-
+	GameObject[] players;
 	
 	// Use this for initialization
 	void Start () {
+		PlayerSelection gameManager = FindObjectOfType(typeof(PlayerSelection)) as PlayerSelection;
+		int playerCount = gameManager.inputs.Count;
+		players = new GameObject[playerCount];
+		Debug.Log("spawning "+playerCount+" players");
+		for(int i = 0; i<playerCount; i++) {
+			// TODO: random position
+			var position = new Vector3(0,0,0);
+			var quat = Quaternion.identity;
+			
+			players[i]= (GameObject) Instantiate(Resources.Load<GameObject>("Player_0"+(i+1)),position,quat);
+			players[i].GetComponent<PlayerMover>().wrapper = gameManager.inputs[i];
+			players[i].GetComponent<DummyController>().enabled = false;
+			// TODO: ui binding
+		}
 		for(uint i = 0; i < numNPCs; i++) {
 			GameObject npc = null;
 		
-			switch(i % 4) {
+			switch(i % playerCount) {
 				case 0:
 					npc = (GameObject)Instantiate(Resources.Load<GameObject>("Character_01"));
 					break;
@@ -36,10 +50,11 @@ public class SceneSetup : MonoBehaviour {
 			
 			npc.transform.position = new Vector3(newX, 0, newZ);
 		}
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
 	}
 }

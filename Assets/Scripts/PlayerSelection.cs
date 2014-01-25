@@ -15,6 +15,7 @@ public class PlayerSelection : MonoBehaviour {
 	private bool keyrightassigned = false;
 	// Use this for initialization
 	void Start () {
+		DontDestroyOnLoad(this);
 		unassigned.Add(PlayerIndex.One);
 		unassigned.Add(PlayerIndex.Two);
 		unassigned.Add(PlayerIndex.Three);
@@ -68,8 +69,12 @@ public class PlayerSelection : MonoBehaviour {
 		}
 	}
 	private void startGame() {
+		if(players <2) {
+			return;
+		}
 		// TODO: implement
 		Debug.Log("start game");
+		Application.LoadLevel(1);
 	}
 	
 	

@@ -20,9 +20,9 @@ public class KeyboardRightControls : InputWrapper {
 	}
 	
 	public float getZMod() {
-		if (Input.GetKey (KeyCode.UpArrow)) {
+		if (Input.GetKey (KeyCode.DownArrow)) {
 			return -1;
-		} else if (Input.GetKey(KeyCode.PageDown)) {
+		} else if (Input.GetKey(KeyCode.UpArrow)) {
 			return 1;
 		}
 		
@@ -31,6 +31,33 @@ public class KeyboardRightControls : InputWrapper {
 	
 	public bool murder() {
 		return Input.GetKeyDown(KeyCode.RightControl);
+	}
+}
+
+
+public class KeyboardLeftControls : InputWrapper {
+	public float getXMod() {
+		if (Input.GetKey (KeyCode.A)) {
+			return -1;
+		} else if (Input.GetKey(KeyCode.D)) {
+			return 1;
+		}
+		
+		return 0;
+	}
+	
+	public float getZMod() {
+		if (Input.GetKey (KeyCode.S)) {
+			return -1;
+		} else if (Input.GetKey(KeyCode.W)) {
+			return 1;
+		}
+		
+		return 0;
+	}
+	
+	public bool murder() {
+		return Input.GetKeyDown(KeyCode.LeftControl);
 	}
 }
 
@@ -81,41 +108,14 @@ public class GamepadControls : InputWrapper {
 	*/}
 }
 
-public class KeyboardLeftControls : InputWrapper {
-	public float getXMod() {
-		if (Input.GetKey (KeyCode.A)) {
-			return -1;
-		} else if (Input.GetKey(KeyCode.D)) {
-			return 1;
-		}
-		
-		return 0;
-	}
-	
-	public float getZMod() {
-		if (Input.GetKey (KeyCode.S)) {
-			return -1;
-		} else if (Input.GetKey(KeyCode.W)) {
-			return 1;
-		}
-		
-		return 0;
-	}
-	
-	public bool murder() {
-		return Input.GetKeyDown(KeyCode.Space);
-	}
-}
 
 public class PlayerMover : MonoBehaviour {
 
 	public float speed = 7;
-	public int controllerPlayer = -1;
-	public int keyboardPlayer = -1;
 	public Vector3 MinBounds = new Vector3(-15, 0, -10);
 	public Vector3 MaxBounds = new Vector3(15, 0, 10);
 	
-	InputWrapper wrapper = null;
+	public InputWrapper wrapper = null;
 	
 	// Use this for initialization
 	void Start () {
@@ -126,7 +126,6 @@ public class PlayerMover : MonoBehaviour {
 	void Update () {
 
 		float delta = Time.deltaTime;
-		
 		
 		if(wrapper != null) {
 			//TODO use move script

@@ -127,7 +127,6 @@ public class PlayerMover : MonoBehaviour {
 		float delta = Time.deltaTime;
 		
 		if(wrapper != null) {
-			//TODO use move script
 			Vector3 result = new Vector3(wrapper.getXMod() * speed * delta,0 , wrapper.getZMod() * speed * delta) + transform.position;
 			
 			if(result.x < MinBounds.x) {

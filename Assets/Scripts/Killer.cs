@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Killer : MonoBehaviour {
 	public float radius;
+	private int killScore;
 	
 	// Use this for initialization
 	void Start () {
@@ -35,7 +36,17 @@ public class Killer : MonoBehaviour {
 		if(nearestDt != null) {
 			nearestDt.takeDamage(this.gameObject);
 		}
+		
+		Debug.Log("Score: " + killScore);
 	}
 	
+	public int KillScore {
+		get {
+			return this.killScore;
+		}
+		set {
+			killScore = value;
+		}
+	}
 	
 }

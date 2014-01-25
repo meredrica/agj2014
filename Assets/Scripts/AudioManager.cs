@@ -2,16 +2,16 @@
 using System.Collections;
 
 public class AudioManager : MonoBehaviour {
-	public AudioSource[] AudioSources;
+	public AudioSource[] AudioSources = new AudioSource[4];
 	public SceneSetup setup;
-	public float closeDistance = 7;
+	public float closeDistance = 6;
 
 	bool mPlayMusic;
 	int mClosePlayers;
 
 	public void PlayMusic ()
 	{
-		for (int i = 0; i < 4; i++)
+		for (int i = 0; i < AudioSources.Length; i++)
 		{
 			AudioSources[i].volume = 0;
 			AudioSources[i].Play();
@@ -24,12 +24,22 @@ public class AudioManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+	
 		if (!mPlayMusic) return;
 		CheckPlayerDistances();
-
-		AudioSources[1].volume = mClosePlayers > 0 ? 1 : 0;
-		AudioSources[2].volume = mClosePlayers > 1 ? 1 : 0;
-		AudioSources[3].volume = mClosePlayers > 2 ? 1 : 0;
+		// loop through the "close" audio sources
+		for(int i= 1; i< AudioSources.Length; i++) {			
+			if(mClosePlayers > i-1) {
+				// we have enough close players to fade in the current sound
+				float vol = AudioSources[i].volume + (Time.deltaTime /3);
+				AudioSources[i].volume = vol > 1? 1 : vol;
+			} else {
+				float vol = AudioSources[i].volume - (Time.deltaTime /3);
+				AudioSources[i].volume = vol >= 0? vol : 0;
+			}
+			Debug.Log("vol["+i+"]: "+AudioSources[i].volume);
+		}
+		
 	}
 
 	void CheckPlayerDistances()
@@ -49,6 +59,5 @@ public class AudioManager : MonoBehaviour {
 				}
 			}
 		}
-		Debug.Log("close players: "+ mClosePlayers);
 	}
 }

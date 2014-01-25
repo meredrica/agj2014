@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class SceneSetup : MonoBehaviour {
 	public int numNPCs = 30;
 	public Vector3 minBounds;
 	public Vector3 maxBounds;
 	public GameObject[] players;
+	public GameObject[] skins;
 	AudioManager audioManager;
 
 	// Use this for initialization
@@ -19,6 +21,7 @@ public class SceneSetup : MonoBehaviour {
 		players = new GameObject[playerCount];
 		var quat = Quaternion.identity;
 		Debug.Log("spawning "+playerCount+" players");
+		List<int> usedSkins = new List<int>(players.Length);
 		for(int i = 0; i<playerCount; i++)
 		{
 			var newX = (int)Random.Range(minBounds.x, maxBounds.x);
@@ -27,11 +30,15 @@ public class SceneSetup : MonoBehaviour {
 			
 			players[i] = (GameObject) Instantiate(Resources.Load<GameObject>("Player"),position,quat);
 			players[i].GetComponent<PlayerMover>().wrapper = gameManager.inputs[i];
-
-			var skin = (GameObject) Instantiate(Resources.Load<GameObject>("Skins/Skin_0"+(i+1)));
+			var skinId = Random.Range(0,skins.Length);
+			int counter = 0;
+			while(usedSkins.Contains(skinId) == false && counter++ < playerCount * 10) {
+				skinId = Random.Range(0,skins.Length);
+			}
+			usedSkins.Add(skinId);
+			var skin = (GameObject)Instantiate(skins[skinId]);
 			skin.transform.parent = players[i].transform;
 			skin.transform.localPosition = Vector3.zero;
-
 			// TODO: ui binding
 		}
 		for(uint i = 0; i < numNPCs; i++) {
@@ -40,21 +47,8 @@ public class SceneSetup : MonoBehaviour {
 			var position = new Vector3(newX, 0, newZ);
 
 			GameObject npc = (GameObject)Instantiate(Resources.Load<GameObject>("NPC"),position,quat);
-			var skinName = "Skins/Skin_01";
-
-			switch(i % playerCount) {
-				case 1:
-					skinName = "Skins/Skin_02";
-					break;
-				case 2:
-					skinName = "Skins/Skin_03";
-					break;
-				case 3:
-					skinName = "Skins/Skin_04";
-					break;
-			}
 			
-			GameObject skin = (GameObject)Instantiate(Resources.Load<GameObject>(skinName));
+			GameObject skin = (GameObject)Instantiate(skins[i % skins.Length]);
 			skin.transform.parent = npc.transform;
 			skin.transform.localPosition = Vector3.zero;
 

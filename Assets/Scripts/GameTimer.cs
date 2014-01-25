@@ -55,6 +55,8 @@ public class GameTimer : MonoBehaviour {
 			start = false;
 		} else if(timer < state && state == 0 && !start) {
 			gameEnded ();
+			displayCountdown("THE END");
+			StartCoroutine("HideTheEnd");
 			state = -1;
 		}
 	}
@@ -62,6 +64,12 @@ public class GameTimer : MonoBehaviour {
 	IEnumerator HideGo()
 	{
 		yield return new WaitForSeconds(1);
+		displayCountdown("");
+	}
+
+	IEnumerator HideTheEnd()
+	{
+		yield return new WaitForSeconds(3);
 		displayCountdown("");
 	}
 }

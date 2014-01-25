@@ -12,6 +12,8 @@ public class SystemMessages : MonoBehaviour
 		myStyle.font = MyFont;
 		myStyle.fontSize = 240;
 
-		GUI.Label(new Rect((Screen.width - 200)/2, (Screen.height-200)/2, 200, 200), Message, myStyle);
+		Vector2 size = myStyle.CalcSize( new GUIContent(Message));
+
+		GUI.Label(new Rect((Screen.width - size.x)/2, (Screen.height-size.y)/2, size.x, size.y), Message, myStyle);
 	}
 }

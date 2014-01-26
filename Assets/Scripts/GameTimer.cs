@@ -7,6 +7,8 @@ public class GameTimer : MonoBehaviour {
 	public float gameStartEnd = -1;
 	public SceneSetup sceneSetup;
 	public SystemMessages SysMessage;
+	public TimerMessages TimerMessage;
+	public AudioSource InitialCountdown;
 
 	int state;
 	bool start;
@@ -17,10 +19,16 @@ public class GameTimer : MonoBehaviour {
 		state = 3;
 		timer = gameStartDelay;
 		start = true;
+		InitialCountdown.Play();
+		InitialCountdown.audio.pitch = 1.15f;
 	}
 	
 	private void displayCountdown(string message) {
 		SysMessage.Message = message;
+	}
+
+	private void displayCountdownSmall(string message) {
+		TimerMessage.Message = message;
 	}
 	
 	private void gameStarted() {
@@ -40,7 +48,7 @@ public class GameTimer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer -= Time.deltaTime;
-		
+
 		if(timer < state && state > 0) {
 			displayCountdown("" + state);
 			state--;

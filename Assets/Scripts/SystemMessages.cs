@@ -5,12 +5,13 @@ public class SystemMessages : MonoBehaviour
 {
 	public Font MyFont;
 	public string Message;
+	public int FontSize = 240;
 
 	void OnGUI()
 	{
 		GUIStyle myStyle = new GUIStyle();
 		myStyle.font = MyFont;
-		myStyle.fontSize = 240;
+		myStyle.fontSize = FontSize;
 
 		Vector2 size = myStyle.CalcSize( new GUIContent(Message));
 

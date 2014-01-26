@@ -2297,6 +2297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyFont: {fileID: 12800000, guid: 91474bf6ddcc7fe459c351e69756661a, type: 3}
   Message: 
+  FontSize: 240
 --- !u!4 &918258947
 Transform:
   m_ObjectHideFlags: 0
@@ -2623,6 +2624,7 @@ MonoBehaviour:
   gameStartEnd: -1
   sceneSetup: {fileID: 1060157218}
   SysMessage: {fileID: 918258946}
+  ScoreBoard: {fileID: 1804937998}
   TimerMessage: {fileID: 809739622}
   InitialCountdown: {fileID: 1723772859}
   VictorySound: {fileID: 0}
@@ -4669,6 +4671,47 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1636748601}
   m_GameObject: {fileID: 1799448242}
   m_Mesh: {fileID: 4300000, guid: 02a35a6b87503e94695edcc6709fc36f, type: 3}
+--- !u!1 &1804937997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1804937999}
+  - 114: {fileID: 1804937998}
+  m_Layer: 0
+  m_Name: Scoreboard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1804937998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1804937997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9a4099d4a61b145adbe9e45bf46bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyFont: {fileID: 12800000, guid: 91474bf6ddcc7fe459c351e69756661a, type: 3}
+  Message: 
+  FontSize: 80
+--- !u!4 &1804937999
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1804937997}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.734057903, y: 16.8814754, z: -13.793644}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1824359110
 GameObject:
   m_ObjectHideFlags: 0

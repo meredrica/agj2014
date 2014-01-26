@@ -30,6 +30,9 @@ public class GameTimer : MonoBehaviour {
 	public AudioSource InitialCountdown;
 	public AudioSource VictorySound;
 
+	public GameObject QuitGame;
+	public GameObject[] StartGameIcons;
+
 	int state;
 	bool start;
 	float timer;
@@ -129,7 +132,11 @@ public class GameTimer : MonoBehaviour {
 		float[] yCharacterStart = {-0.6f, 0.4f, 1.4f, 2.4f};
 		
 		yield return new WaitForSeconds(3);
-		
+
+		var gm = FindObjectOfType<PlayerSelection>();
+		StartGameIcons[gm.mStartMessageIndex].SetActive(true);
+		QuitGame.SetActive(true);
+
 		var cam = GameObject.Find("Main Camera");
 		
 		for(int i = 0; i < ranking.Count; i++) {

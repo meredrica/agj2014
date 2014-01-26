@@ -19,7 +19,7 @@ public class PlayerSelection : MonoBehaviour {
 	private bool keyrightassigned = false;
 
 	bool mShowStartMessage;
-	int mStartMessageIndex;
+	public int mStartMessageIndex;
 
 	// Use this for initialization
 	void Start () {

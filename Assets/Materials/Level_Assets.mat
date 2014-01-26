@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Floor_01
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: Level_Assets
+  m_Shader: {fileID: 4800000, guid: 0d031be6d2a1563468ba934fa858c135, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -17,8 +17,8 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 5e8990627a0c6ae45ada4f90888aa1da, type: 3}
-          m_Scale: {x: 7, y: 8}
+          m_Texture: {fileID: 2800000, guid: ca1228d8ee839274d88606bd7d622b2c, type: 3}
+          m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -40,7 +40,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .647058845, g: .717647076, b: .721568644, a: 1}
       data:
         first:
           name: _SpecColor

@@ -14,6 +14,10 @@ public class SceneSetup : MonoBehaviour {
 	
 	public TextMesh[] GamepadTextMesh;
 	public TextMesh[] KeyboardsTextMesh;
+
+	public Color[] PlayerColors;
+	public GameObject PlayerIndicator;
+
 	// Use this for initialization
 	public void StartGame ()
 	{
@@ -42,6 +46,9 @@ public class SceneSetup : MonoBehaviour {
 			var skin = (GameObject)Instantiate(skins[i % skins.Length]);
 			skin.transform.parent = players[i].transform;
 			skin.transform.localPosition = Vector3.zero;
+			var indicator = (GameObject) Instantiate(PlayerIndicator,players[i].transform.position,quat);
+			indicator.renderer.material.color = PlayerColors[i];
+
 			// TODO: ui binding
 		}
 		

@@ -3,7 +3,21 @@ using System.Collections;
 
 public class PlayerDamageTaker : DamageTaker {
 	public static int reward = 25;
-
+	
+	void Update () {
+		if(!alive) {
+			timer += Time.deltaTime;
+			
+			if(timer >= respawnTime) {
+				timer = 0;
+				respawnObject();
+				
+				NPCStorage npcStorage = GameObject.Find("NPCContainer").GetComponent<NPCStorage>();
+				npcStorage.spawnAtPosition(transform.position);
+			}
+		}
+	}
+	
 	private IEnumerator respawn() {
 		yield return new WaitForSeconds(4);
 	}

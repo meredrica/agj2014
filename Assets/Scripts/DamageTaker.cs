@@ -73,20 +73,13 @@ public abstract class DamageTaker : MonoBehaviour {
 		return result;
 	}
 	
-	void Update () {
-		if(!alive) {
-			timer += Time.deltaTime;
-			
-			if(timer >= respawnTime) {
-				var allRenderer = GetComponentsInChildren<Renderer>();
-				foreach(Renderer rend in allRenderer)
-				{
-					rend.enabled = true;
-					alive = true;
-				}
-				timer = 0;
-				GetComponent<SpawnEffect>().startEffect();
-			}
+	public void respawnObject() {
+		var allRenderer = GetComponentsInChildren<Renderer>();
+		foreach(Renderer rend in allRenderer)
+		{
+			rend.enabled = true;
+			alive = true;
 		}
+		GetComponent<SpawnEffect>().startEffect();
 	}
 }

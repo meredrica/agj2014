@@ -10,13 +10,13 @@ public class KillInSeconds : MonoBehaviour {
 	{
 		mTimeAccum += Time.deltaTime;
 		
-		if(FadeTime > 0) {
-			float fadeStart = KillTimer - FadeTime;
-			if(mTimeAccum >= fadeStart) {
-				float alphaValue = (mTimeAccum - fadeStart)/FadeTime;
-				this.transform.GetChild(0).gameObject.renderer.material.SetFloat("_Cutoff", 1 - alphaValue);
-			}
-		}
+//		if(FadeTime > 0) {
+//			float fadeStart = KillTimer - FadeTime;
+//			if(mTimeAccum >= fadeStart) {
+//				float alphaValue = (mTimeAccum - fadeStart)/FadeTime;
+//				this.transform.GetChild(0).gameObject.renderer.material.SetFloat("_Cutoff", 1 - alphaValue);
+//			}
+//		}
 		
 		if (mTimeAccum >= KillTimer)
 			gameObject.SetActive(false);

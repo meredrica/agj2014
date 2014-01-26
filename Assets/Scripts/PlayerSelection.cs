@@ -54,6 +54,7 @@ public class PlayerSelection : MonoBehaviour {
 		if (players == 2 && !mShowStartMessage)
 		{
 			StartGameIcons[mStartMessageIndex].gameObject.SetActive(true);
+			mShowStartMessage = true;
 		}
 
 		foreach (PlayerIndex index in unassigned) {

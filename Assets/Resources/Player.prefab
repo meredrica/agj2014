@@ -103,10 +103,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alive: 1
   respawnTime: 4
-  dietime: 2
+  dietime: .699999988
   Curve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: .340904832
+      value: .436093867
+      inSlope: -.764429569
+      outSlope: -.764429569
+      tangentMode: 0
+    - time: .766399205
+      value: .913939595
+      inSlope: -.482004106
+      outSlope: -.482004106
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
 --- !u!114 &11400008

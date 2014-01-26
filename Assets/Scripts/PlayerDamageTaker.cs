@@ -12,6 +12,11 @@ public class PlayerDamageTaker : DamageTaker {
 	{
 		//Rewards points
 		
+		killer.KillScore += reward;
+	}
+	
+	protected override void resetPosition ()
+	{
 		//We know this is hacky, but who cares!?
 		InBoundMover boundMover = GetComponent<InBoundMover>();
 		Vector3 minBounds = boundMover.MinBounds;
@@ -21,7 +26,5 @@ public class PlayerDamageTaker : DamageTaker {
 		var newZ = (int)Random.Range(minBounds.z, maxBounds.z);
 		
 		transform.position = new Vector3(newX, 0, newZ);
-		
-		killer.KillScore += reward;
 	}
 }

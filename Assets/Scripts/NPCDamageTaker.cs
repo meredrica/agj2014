@@ -9,4 +9,8 @@ public class NPCDamageTaker : DamageTaker {
 		//Implement negative points
 		killer.KillScore -= penalty;
 	}
+	
+	protected override void resetPosition ()
+	{
+	}
 }

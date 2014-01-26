@@ -54,3 +54,19 @@ TagManager:
     userID: 3
     uniqueID: 1733941231
     locked: 0
+  - name: Logo
+    userID: 4
+    uniqueID: 2442436019
+    locked: 0
+  - name: Character_Off
+    userID: 5
+    uniqueID: 2451251511
+    locked: 0
+  - name: Character_On
+    userID: 6
+    uniqueID: 4081618405
+    locked: 0
+  - name: Character_Overlay
+    userID: 7
+    uniqueID: 2031081663
+    locked: 0

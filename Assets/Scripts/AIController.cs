@@ -26,11 +26,15 @@ public class AIController : MonoBehaviour
 
 		if (mTimeAccum >= NewTargetPositionInterval)
 		{
-			var newTargetPosition = CalculateNewTargetPosition();
-			CharController.TargetPosition = newTargetPosition;
-			CharController.MoveToPosition();
-			mTimeAccum = 0;
+			recalculate();
 		}
+	}
+	
+	public void recalculate() {
+		var newTargetPosition = CalculateNewTargetPosition();
+		CharController.TargetPosition = newTargetPosition;
+		CharController.MoveToPosition();
+		mTimeAccum = 0;
 	}
 
 	Vector3 CalculateNewTargetPosition ()

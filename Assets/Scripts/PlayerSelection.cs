@@ -73,7 +73,7 @@ public class PlayerSelection : MonoBehaviour {
 
 				unassigned.Remove(index);
 				players++;
-				Debug.Log("assigned player " + players);
+				//Debug.Log("assigned player " + players);
 				return;
 			}
 			
@@ -91,7 +91,7 @@ public class PlayerSelection : MonoBehaviour {
 				mStartMessageIndex = 1;
 
 			players++;
-			Debug.Log("assigned player " + players);
+			//Debug.Log("assigned player " + players);
 			return;
 		}
 		if (Input.GetKeyDown(KeyCode.RightControl) && keyrightassigned == false) {
@@ -107,7 +107,7 @@ public class PlayerSelection : MonoBehaviour {
 				mStartMessageIndex = 1;
 
 			players++;
-			Debug.Log("assigned player " + players);
+			//Debug.Log("assigned player " + players);
 			return;
 		}
 	}
@@ -116,7 +116,7 @@ public class PlayerSelection : MonoBehaviour {
 			return;
 		}
 		// TODO: implement
-		Debug.Log("start game");
+		//Debug.Log("start game");
 		Application.LoadLevel(1);
 	}
 	

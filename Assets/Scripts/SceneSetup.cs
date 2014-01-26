@@ -33,7 +33,7 @@ public class SceneSetup : MonoBehaviour {
 		
 		for(int i = 0; i<playerCount; i++)
 		{
-			players[i] = (GameObject) Instantiate(Resources.Load<GameObject>("Player"),rangedPosition(i),quat);
+			players[i] = (GameObject) Instantiate(Resources.Load<GameObject>("Player"),rangedPosition(i,minBounds,maxBounds),quat);
 			players[i].GetComponent<PlayerMover>().wrapper = gameManager.inputs[i];
 			var skin = (GameObject)Instantiate(skins[i % skins.Length]);
 			skin.transform.parent = players[i].transform;
@@ -45,7 +45,7 @@ public class SceneSetup : MonoBehaviour {
 		for(int i = 0; i < numNPCs; i++) {
 		
 		
-			GameObject npc = (GameObject)Instantiate(Resources.Load<GameObject>("NPC"),rangedPosition(i),quat);
+			GameObject npc = (GameObject)Instantiate(Resources.Load<GameObject>("NPC"),rangedPosition(i,minBounds,maxBounds),quat);
 			GameObject skin = (GameObject)Instantiate(skins[i % skins.Length]);
 			skin.transform.parent = npc.transform;
 			skin.transform.localPosition = Vector3.zero;
@@ -62,7 +62,7 @@ public class SceneSetup : MonoBehaviour {
 		
 	}
 	
-	Vector3 rangedPosition(int i){
+	public static Vector3 rangedPosition(int i,Vector3 minBounds, Vector3 maxBounds){
 		int div = i%4;
 		
 		float minX = 0;

@@ -63,6 +63,7 @@ public class PlayerSelection : MonoBehaviour {
 				inputs.Add(new GamepadControls(index));
 
 				var intCast = (int)index;
+
 				PlayerOns[players].gameObject.SetActive(true);
 				GamepadIcons[intCast].transform.parent = PlayerOns[players].transform;
 				GamepadIcons[intCast].transform.localPosition = Vector3.zero;
@@ -109,6 +110,14 @@ public class PlayerSelection : MonoBehaviour {
 			players++;
 			//Debug.Log("assigned player " + players);
 			return;
+		}
+
+		if  (Input.GetKeyDown(KeyCode.Escape))
+		{
+			if(Application.loadedLevelName == "MainMenu")
+				Application.Quit();
+			else
+				Application.LoadLevel(0);
 		}
 	}
 	private void startGame() {

@@ -70,3 +70,7 @@ TagManager:
     userID: 7
     uniqueID: 2031081663
     locked: 0
+  - name: Tutorial
+    userID: 8
+    uniqueID: 224145205
+    locked: 0

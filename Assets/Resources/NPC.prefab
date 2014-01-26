@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400008}
+  - 114: {fileID: 11400010}
   m_Layer: 8
   m_Name: NPC
   m_TagString: Untagged
@@ -142,6 +143,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a04272e229d06048be048bd4ff3207a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5843991f8fbc70545bdb3095afe07c5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinBounds: {x: -14.5, y: 0, z: 9.5}
+  MaxBounds: {x: 14.5, y: 0, z: -9.5}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -8,5 +8,12 @@ public class NPCDamageTaker : DamageTaker {
 	{
 		//Implement negative points
 		killer.KillScore -= penalty;
+		
+		NPCStorage npcStorage = GameObject.Find("NPCContainer").GetComponent<NPCStorage>();
+		npcStorage.addNPC(this.gameObject);
+	}
+	
+	protected override void resetPosition ()
+	{
 	}
 }

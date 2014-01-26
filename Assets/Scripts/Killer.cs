@@ -66,7 +66,7 @@ public class Killer : MonoBehaviour {
 			nearestDt.takeDamage(this.gameObject);
 		}
 		
-		Debug.Log("Score: " + killScore);
+		//Debug.Log("Score: " + killScore);
 	}
 	
 	IEnumerator KillMe (GameObject go)

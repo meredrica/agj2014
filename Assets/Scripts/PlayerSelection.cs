@@ -6,6 +6,10 @@ using System.Collections.Generic;
 
 
 public class PlayerSelection : MonoBehaviour {
+	public GameObject[] GamepadIcons;
+	public GameObject[] KeyboardIcons;
+	public GameObject[] PlayerOns;
+	public GameObject[] StartGameIcons;
 
 	private List<PlayerIndex> unassigned = new List<PlayerIndex>();
 	
@@ -13,6 +17,10 @@ public class PlayerSelection : MonoBehaviour {
 	private int players=0;
 	private bool keyleftassigned = false;
 	private bool keyrightassigned = false;
+
+	bool mShowStartMessage;
+	int mStartMessageIndex;
+
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad(this);
@@ -42,13 +50,30 @@ public class PlayerSelection : MonoBehaviour {
 		if(players ==4) {
 			return;
 		}
+
+		if (players == 2 && !mShowStartMessage)
+		{
+			StartGameIcons[mStartMessageIndex].gameObject.SetActive(true);
+			mShowStartMessage = true;
+		}
+
 		foreach (PlayerIndex index in unassigned) {
 			var state = GamePad.GetState(index);
 			if(state.Buttons.X.Equals(ButtonState.Pressed)){
 				inputs.Add(new GamepadControls(index));
+
+				var intCast = (int)index;
+				PlayerOns[players].gameObject.SetActive(true);
+				GamepadIcons[intCast].transform.parent = PlayerOns[players].transform;
+				GamepadIcons[intCast].transform.localPosition = Vector3.zero;
+				GamepadIcons[intCast].gameObject.SetActive(true);
+
+				if (players == 0)
+					mStartMessageIndex = 0;
+
 				unassigned.Remove(index);
 				players++;
-				Debug.Log("assigned player " + players);
+				//Debug.Log("assigned player " + players);
 				return;
 			}
 			
@@ -56,15 +81,33 @@ public class PlayerSelection : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.LeftControl) && keyleftassigned == false) {
 			inputs.Add(new KeyboardLeftControls());
 			keyleftassigned = true;
+
+			PlayerOns[players].gameObject.SetActive(true);
+			KeyboardIcons[0].transform.parent = PlayerOns[players].transform;
+			KeyboardIcons[0].transform.localPosition = Vector3.zero;
+			KeyboardIcons[0].gameObject.SetActive(true);
+
+			if (players == 0)
+				mStartMessageIndex = 1;
+
 			players++;
-			Debug.Log("assigned player " + players);
+			//Debug.Log("assigned player " + players);
 			return;
 		}
 		if (Input.GetKeyDown(KeyCode.RightControl) && keyrightassigned == false) {
 			inputs.Add(new KeyboardRightControls());
 			keyrightassigned = true;
+
+			PlayerOns[players].gameObject.SetActive(true);
+			KeyboardIcons[1].transform.parent = PlayerOns[players].transform;
+			KeyboardIcons[1].transform.localPosition = Vector3.zero;
+			KeyboardIcons[1].gameObject.SetActive(true);
+			
+			if (players == 0)
+				mStartMessageIndex = 1;
+
 			players++;
-			Debug.Log("assigned player " + players);
+			//Debug.Log("assigned player " + players);
 			return;
 		}
 	}
@@ -73,7 +116,7 @@ public class PlayerSelection : MonoBehaviour {
 			return;
 		}
 		// TODO: implement
-		Debug.Log("start game");
+		//Debug.Log("start game");
 		Application.LoadLevel(1);
 	}
 	

@@ -22,8 +22,13 @@ public class GameTimer : MonoBehaviour {
 	public float gameStartDelay = 3;
 	public float gameStartEnd = -1;
 	public SceneSetup sceneSetup;
+	
 	public SystemMessages SysMessage;
 	public SystemMessages ScoreBoard;
+
+	public TimerMessages TimerMessage;
+	public AudioSource InitialCountdown;
+	public AudioSource VictorySound;
 
 	int state;
 	bool start;
@@ -37,22 +42,33 @@ public class GameTimer : MonoBehaviour {
 		timer = gameStartDelay;
 		start = true;
 		winnerMessage = "";
+		InitialCountdown.Play();
+		InitialCountdown.audio.pitch = 1.15f;
 	}
 	
 	private void displayCountdown(string message) {
 		SysMessage.Message = message;
 	}
+
+	private void displayCountdownSmall(string message) {
+		TimerMessage.Message = message;
+	}
 	
 	private void gameStarted() {
-		Debug.Log ("Game started!");
+		//Debug.Log ("Game started!");
 		sceneSetup.StartGame();
 	}
 	
 	private void gameEnded() {
-		Debug.Log ("Game ended!");
+
+		//Debug.Log ("Game ended!");
 		int playerIndex = 0;
 		ranking = new List<Score>();
-		
+
+		//Debug.Log ("Game ended!");
+		if(VictorySound != null)
+			VictorySound.Play();
+
 		foreach(var player in sceneSetup.players) {
 			playerIndex++;
 			
@@ -73,11 +89,12 @@ public class GameTimer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer -= Time.deltaTime;
-		
+
 		if(timer < state && state > 0) {
-			displayCountdown("" + state);
+			displayCountdownSmall("" + state);
 			state--;
 		} else if(timer < state && state == 0 && start) {
+			displayCountdownSmall("");
 			displayCountdown("GO!");
 			state = -1;
 			StartCoroutine("HideGo");
@@ -88,6 +105,7 @@ public class GameTimer : MonoBehaviour {
 			start = false;
 		} else if(timer < state && state == 0 && !start) {
 			gameEnded ();
+			displayCountdownSmall("");
 			displayCountdown("THE END");
 			StartCoroutine("HideTheEnd");
 			state = -1;

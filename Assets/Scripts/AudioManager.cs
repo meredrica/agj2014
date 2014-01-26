@@ -37,7 +37,6 @@ public class AudioManager : MonoBehaviour {
 				float vol = AudioSources[i].volume - (Time.deltaTime /3);
 				AudioSources[i].volume = vol >= 0? vol : 0;
 			}
-			Debug.Log("vol["+i+"]: "+AudioSources[i].volume);
 		}
 		
 	}

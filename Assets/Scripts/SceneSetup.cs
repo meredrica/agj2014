@@ -21,33 +21,31 @@ public class SceneSetup : MonoBehaviour {
 		players = new GameObject[playerCount];
 		var quat = Quaternion.identity;
 		Debug.Log("spawning "+playerCount+" players");
-		List<int> usedSkins = new List<int>(players.Length);
+		// shuffle the skins
+		int n = skins.Length;
+		while(n>1) {
+			n--;
+			int k = Random.Range(0,n);
+			var t = skins[n];
+			skins[n] = skins[k];
+			skins[k] = t;
+		}
+		
 		for(int i = 0; i<playerCount; i++)
 		{
-			var newX = (int)Random.Range(minBounds.x, maxBounds.x);
-			var newZ = (int)Random.Range(minBounds.z, maxBounds.z);
-			var position = new Vector3(newX, 0, newZ);
-			
-			players[i] = (GameObject) Instantiate(Resources.Load<GameObject>("Player"),position,quat);
+			players[i] = (GameObject) Instantiate(Resources.Load<GameObject>("Player"),rangedPosition(i),quat);
 			players[i].GetComponent<PlayerMover>().wrapper = gameManager.inputs[i];
-			var skinId = Random.Range(0,skins.Length);
-			int counter = 0;
-			while(usedSkins.Contains(skinId) == false && counter++ < playerCount * 10) {
-				skinId = Random.Range(0,skins.Length);
-			}
-			usedSkins.Add(skinId);
-			var skin = (GameObject)Instantiate(skins[skinId]);
+			var skin = (GameObject)Instantiate(skins[i % skins.Length]);
 			skin.transform.parent = players[i].transform;
 			skin.transform.localPosition = Vector3.zero;
 			// TODO: ui binding
 		}
-		for(uint i = 0; i < numNPCs; i++) {
-			var newX = (int)Random.Range(minBounds.x, maxBounds.x);
-			var newZ = (int)Random.Range(minBounds.z, maxBounds.z);
-			var position = new Vector3(newX, 0, newZ);
-
-			GameObject npc = (GameObject)Instantiate(Resources.Load<GameObject>("NPC"),position,quat);
-			
+		
+		
+		for(int i = 0; i < numNPCs; i++) {
+		
+		
+			GameObject npc = (GameObject)Instantiate(Resources.Load<GameObject>("NPC"),rangedPosition(i),quat);
 			GameObject skin = (GameObject)Instantiate(skins[i % skins.Length]);
 			skin.transform.parent = npc.transform;
 			skin.transform.localPosition = Vector3.zero;
@@ -63,4 +61,50 @@ public class SceneSetup : MonoBehaviour {
 	void Update () {
 		
 	}
+	
+	Vector3 rangedPosition(int i){
+		int div = i%4;
+		
+		float minX = 0;
+		float maxX = 0;
+		float minZ = 0;
+		float maxZ = 0;
+		switch (div) {
+		case 0: // top left
+			minX = minBounds.x;
+			maxX = 0;
+			minZ = minBounds.z ;
+			maxZ = 0;
+			break;
+		case 1: // top right
+			minX = 0;
+			maxX = maxBounds.x;
+			minZ = minBounds.z ;
+			maxZ = 0;
+			break;
+		case 2: // bottom left
+			minX = minBounds.x;
+			maxX = 0;
+			minZ = 0;
+			maxZ = maxBounds.z;
+			break;
+		default: // bottom right
+			
+			minX = 0;
+			maxX = maxBounds.x;
+			minZ = 0;
+			maxZ = maxBounds.z;
+			break;
+		}
+		
+		//Debug.Log("x: ["+minX+","+maxX+"] z: ["+minZ+","+maxZ+"]");
+		
+		var newX = Random.Range(minX, maxX);
+		var newZ = Random.Range(minZ, maxZ);
+		
+		//Debug.Log("i: " + i +" nexX: "+newX+" newZ: "+newZ);
+		return new Vector3((int)newX, 0, (int)newZ);
+	}
+	
+	
 }

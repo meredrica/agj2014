@@ -63,6 +63,7 @@ public class PlayerSelection : MonoBehaviour {
 				inputs.Add(new GamepadControls(index));
 
 				var intCast = (int)index;
+
 				PlayerOns[players].gameObject.SetActive(true);
 				GamepadIcons[intCast].transform.parent = PlayerOns[players].transform;
 				GamepadIcons[intCast].transform.localPosition = Vector3.zero;

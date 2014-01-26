@@ -75,15 +75,17 @@ public class GameTimer : MonoBehaviour {
 		foreach(var player in sceneSetup.players) {
 			playerIndex++;
 			
-			PlayerMover mover = player.GetComponent<PlayerMover>();
-			mover.wrapper = null;
-			
 			Killer killer = player.GetComponent<Killer>();
 			killer.isActive = false;
 			
 			ranking.Add(new Score(playerIndex, killer.KillScore));
 		}
 		
+		var npcs = GameObject.FindObjectsOfType<AIController>();
+		foreach (var npc in npcs)
+		{
+			npc.gameObject.SetActive(false);
+		}
 		ranking.Sort(Score.compareByPoints);
 		
 		StartCoroutine("ShowWinner");
@@ -144,12 +146,49 @@ public class GameTimer : MonoBehaviour {
 			
 			winnerMessage += (i+1) + ".Player " + ranking[i].playerIndex + ": " + ranking[i].points;
 			
+			InputWrapper wrapper = sceneSetup.players[i].GetComponent<PlayerMover>().wrapper;
+			Debug.Log(wrapper);
+			GameObject playerId = null;
+			TextMesh ScoreMesh = null;
+			
+			if(wrapper is KeyboardLeftControls) {
+				playerId = sceneSetup.Keyboards[0];
+				ScoreMesh = sceneSetup.KeyboardsTextMesh[0];
+				Debug.Log("LeftPlayer");
+			} else if(wrapper is KeyboardRightControls) {
+				playerId = sceneSetup.Keyboards[1];
+				ScoreMesh = sceneSetup.KeyboardsTextMesh[1];
+				Debug.Log("RightPlayer");
+			} else if(wrapper is GamepadControls) {
+				GamepadControls gc = (GamepadControls)wrapper;
+				
+				int index = (int)gc.index;
+				playerId = sceneSetup.Gamepads[index];
+				ScoreMesh = sceneSetup.GamepadTextMesh[index];
+				Debug.Log("gamepad_0" + (index + 1));
+			}
+			
+			if(playerId != null) {
+				
+				Vector3 pos = new Vector3(playerId.transform.localPosition.x,
+										yCharacterStart[ranking.Count-1] - yCharacterOffset*i,
+				                    	playerId.transform.localPosition.z);
+					Debug.Log("Position: " + pos);
+				playerId.transform.localPosition = pos;
+				
+				ScoreMesh.text = "" + ranking[i].points;
+				playerId.SetActive(true);
+			}
+			
 			sceneSetup.players[i].transform.parent = cam.transform;
 			Player_Controller cc = sceneSetup.players[i].GetComponent<Player_Controller>();
 			cc.TargetPosition = new Vector3(-7.5f, yCharacterStart[ranking.Count-1] - yCharacterOffset*i, 51f);
 			cc.UpdatePositionOffset = true;
+			
+			PlayerMover mover = sceneSetup.players[i].GetComponent<PlayerMover>();
+			mover.wrapper = null;
 		}
 		
-		ScoreBoard.Message = winnerMessage;
+		//ScoreBoard.Message = winnerMessage;
 	}
 }

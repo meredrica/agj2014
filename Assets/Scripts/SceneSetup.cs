@@ -9,7 +9,11 @@ public class SceneSetup : MonoBehaviour {
 	public GameObject[] players;
 	public GameObject[] skins;
 	AudioManager audioManager;
-
+	public GameObject[] Gamepads;
+	public GameObject[] Keyboards;
+	
+	public TextMesh[] GamepadTextMesh;
+	public TextMesh[] KeyboardsTextMesh;
 	// Use this for initialization
 	public void StartGame ()
 	{

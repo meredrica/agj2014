@@ -62,7 +62,7 @@ public class KeyboardLeftControls : InputWrapper {
 }
 
 public class GamepadControls : InputWrapper {
-	PlayerIndex index;
+	public PlayerIndex index;
 	
 	public GamepadControls(PlayerIndex player) {
 		index = player;

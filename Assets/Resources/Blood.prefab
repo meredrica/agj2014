@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f06719d7e8e92de4bb5675856f45f467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KillTimer: 4
+  KillTimer: 20
   FadeTime: 1
 --- !u!1001 &100100000
 Prefab:

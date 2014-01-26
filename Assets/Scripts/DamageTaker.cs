@@ -42,8 +42,10 @@ public abstract class DamageTaker : MonoBehaviour {
 		{
 			rend.enabled = false;
 		}
+		Quaternion quat = Quaternion.identity;
 		
-		var blood = Instantiate(Resources.Load<GameObject>("Blood"),parent.position,Quaternion.identity) as Transform;
+		var blood = Instantiate(Resources.Load<GameObject>("Blood"),parent.position,quat) as GameObject;
+		blood.transform.Rotate(Vector3.up,Random.Range(0,360));
 		
 		resetPosition();
 	}

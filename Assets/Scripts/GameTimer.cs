@@ -9,6 +9,7 @@ public class GameTimer : MonoBehaviour {
 	public SystemMessages SysMessage;
 	public TimerMessages TimerMessage;
 	public AudioSource InitialCountdown;
+	public AudioSource VictorySound;
 
 	int state;
 	bool start;
@@ -32,13 +33,14 @@ public class GameTimer : MonoBehaviour {
 	}
 	
 	private void gameStarted() {
-		Debug.Log ("Game started!");
+		//Debug.Log ("Game started!");
 		sceneSetup.StartGame();
 	}
 	
 	private void gameEnded() {
-		Debug.Log ("Game ended!");
-		
+		//Debug.Log ("Game ended!");
+		VictorySound.Play();
+
 		foreach(var player in sceneSetup.players) {
 			PlayerMover mover = player.GetComponent<PlayerMover>();
 			mover.wrapper = null;
@@ -50,9 +52,10 @@ public class GameTimer : MonoBehaviour {
 		timer -= Time.deltaTime;
 
 		if(timer < state && state > 0) {
-			displayCountdown("" + state);
+			displayCountdownSmall("" + state);
 			state--;
 		} else if(timer < state && state == 0 && start) {
+			displayCountdownSmall("");
 			displayCountdown("GO!");
 			state = -1;
 			StartCoroutine("HideGo");
@@ -63,6 +66,7 @@ public class GameTimer : MonoBehaviour {
 			start = false;
 		} else if(timer < state && state == 0 && !start) {
 			gameEnded ();
+			displayCountdownSmall("");
 			displayCountdown("THE END");
 			StartCoroutine("HideTheEnd");
 			state = -1;

@@ -20,7 +20,7 @@ public class SceneSetup : MonoBehaviour {
 		int playerCount = gameManager.inputs.Count;
 		players = new GameObject[playerCount];
 		var quat = Quaternion.identity;
-		Debug.Log("spawning "+playerCount+" players");
+		//Debug.Log("spawning "+playerCount+" players");
 		// shuffle the skins
 		int n = skins.Length;
 		while(n>1) {
@@ -97,12 +97,12 @@ public class SceneSetup : MonoBehaviour {
 			break;
 		}
 		
-		//Debug.Log("x: ["+minX+","+maxX+"] z: ["+minZ+","+maxZ+"]");
+		////Debug.Log("x: ["+minX+","+maxX+"] z: ["+minZ+","+maxZ+"]");
 		
 		var newX = Random.Range(minX, maxX);
 		var newZ = Random.Range(minZ, maxZ);
 		
-		//Debug.Log("i: " + i +" nexX: "+newX+" newZ: "+newZ);
+		////Debug.Log("i: " + i +" nexX: "+newX+" newZ: "+newZ);
 		return new Vector3((int)newX, 0, (int)newZ);
 	}
 	

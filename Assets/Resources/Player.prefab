@@ -143,8 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  MinBounds: {x: -15, y: 0, z: -10}
-  MaxBounds: {x: 15, y: 0, z: 10}
+  MinBounds: {x: -14.5, y: 0, z: -10}
+  MaxBounds: {x: 14.5, y: 0, z: 9.5}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1

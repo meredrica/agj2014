@@ -111,6 +111,14 @@ public class PlayerSelection : MonoBehaviour {
 			//Debug.Log("assigned player " + players);
 			return;
 		}
+
+		if  (Input.GetKeyDown(KeyCode.Escape))
+		{
+			if(Application.loadedLevelName == "MainMenu")
+				Application.Quit();
+			else
+				Application.LoadLevel(0);
+		}
 	}
 	private void startGame() {
 		if(players <2) {

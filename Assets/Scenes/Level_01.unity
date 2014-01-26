@@ -244,6 +244,47 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1 &328110988
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 328110990}
+  - 114: {fileID: 328110989}
+  m_Layer: 0
+  m_Name: ScoreBoard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &328110989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 328110988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9a4099d4a61b145adbe9e45bf46bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyFont: {fileID: 0}
+  Message: 
+  FontSize: 86
+--- !u!4 &328110990
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 328110988}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.69213057, y: 14.3805189, z: -15.3504276}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &372076687
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyFont: {fileID: 12800000, guid: 91474bf6ddcc7fe459c351e69756661a, type: 3}
   Message: 
+  FontSize: 240
 --- !u!4 &918258947
 Transform:
   m_ObjectHideFlags: 0
@@ -528,6 +570,7 @@ MonoBehaviour:
   gameStartEnd: -1
   sceneSetup: {fileID: 1060157218}
   SysMessage: {fileID: 918258946}
+  ScoreBoard: {fileID: 328110989}
 --- !u!1 &1486196216
 GameObject:
   m_ObjectHideFlags: 0

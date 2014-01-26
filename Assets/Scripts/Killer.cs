@@ -4,13 +4,14 @@ using System.Collections;
 public class Killer : MonoBehaviour {
 	public float radius;
 	public float attackCooldown = 1;
+	public bool isActive;
 	
 	private int killScore;
 	private float attackTimer = 0;
 	
 	// Use this for initialization
 	void Start () {
-	
+		isActive = true;
 	}
 	
 	// Update is called once per frame

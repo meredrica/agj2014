@@ -7,16 +7,14 @@ public class AIController : MonoBehaviour
 	public Vector3 MinBounds = new Vector3(-15, 0, 10);
 	public Vector3 MaxBounds = new Vector3(15, 0, -10);
 
-	public float NewTargetPositionInterval = 3.0f;
+	public float NewTargetPositionInterval = 9.0f;
+	float randomTime;
 
 	float mTimeAccum = 0;
 
 	void Start()
 	{
-		var newTargetPosition = CalculateNewTargetPosition();
-		CharController.TargetPosition = newTargetPosition;
-		CharController.MoveToPosition();
-		mTimeAccum = 0;
+		recalculate();
 	}
 
 	// Update is called once per frame
@@ -24,24 +22,19 @@ public class AIController : MonoBehaviour
 	{
 		mTimeAccum += Time.deltaTime;
 
-		if (mTimeAccum >= NewTargetPositionInterval)
+		if (mTimeAccum >= randomTime)
 		{
 			recalculate();
+			mTimeAccum = 0;
 		}
 	}
 	
 	public void recalculate() {
-		var newTargetPosition = CalculateNewTargetPosition();
-		CharController.TargetPosition = newTargetPosition;
+		randomTime = Random.Range(3,NewTargetPositionInterval);
+		// decide on a quadrant first
+		var rand = Random.Range(0,4);
+		// reuse magic from scene setup
+		CharController.TargetPosition = SceneSetup.rangedPosition(rand,MinBounds,MaxBounds);
 		CharController.MoveToPosition();
-		mTimeAccum = 0;
-	}
-
-	Vector3 CalculateNewTargetPosition ()
-	{
-		var newX = (int)Random.Range(MinBounds.x, MaxBounds.x);
-		var newZ = (int)Random.Range(MinBounds.z, MaxBounds.z);
-
-		return new Vector3(newX, transform.position.y, newZ);
 	}
 }

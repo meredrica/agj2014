@@ -52,7 +52,7 @@ public class AudioManager : MonoBehaviour {
 				var other = players[j];
 				var currentPosition = current.transform.position;
 				var dt = other.GetComponent<DamageTaker>() as DamageTaker;
-				if(dt.alive == false) {
+				if(!dt.alive || !other.GetComponent<Killer>().isActive) {
 					continue;
 				}
 				var otherPosition = other.transform.position;
